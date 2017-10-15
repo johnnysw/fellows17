@@ -6,14 +6,36 @@
     <style>
 
         #div1{
-            height: 20px;
+            /*height: 20px;*/
             background: #ff0000;
+        }
+        #div1::after{
+            content: '';
+            background: #CCC;
+            height: 100px;
+            width: 5px;
+            position: absolute;
+            right: 200px;
+            top:30px;
+
+        }
+        #div1::before{
+            content: '';
+            background: orange;
+            height: 100px;
+            width: 5px;
+            position: absolute;
+            left: 200px;
+            top:30px;
+
         }
     </style>
 </head>
 <body>
     <div id="div1">
-        <img src="img/p-1.png" alt=""/>
+        <p>HJGDSJHG</p>
+        <A>DSJHSDG</A>
+        
 
     </div>
 
