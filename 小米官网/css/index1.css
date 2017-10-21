@@ -1,0 +1,142 @@
+body{
+    height: 2000px;
+}
+/*轮播图开始*/
+.slide-box{
+    position: relative;
+}
+.slide{
+    position: relative;
+    height: 460px;
+}
+.img-box img{
+    width: 1226px;
+    height: 460px;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.prev-btn,.next-btn{
+    width: 40px;
+    height: 70px;
+    position: absolute;
+    top:50%;
+    margin-top:-35px;
+    color: #757575;
+    font-size: 50px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 4px;
+}
+.prev-btn{
+    left:234px;
+}
+.next-btn{
+    right:0px;
+}
+.prev-btn:hover,.next-btn:hover{
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+}
+.btns li{
+    width: 6px;
+    height: 6px;
+    background: #232429;
+    border:2px solid #65666b;
+    float: left;
+    margin-right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.btns li:hover{
+    background: #898a8e;
+    border:2px solid #4f4e56;
+}
+.btns{
+    width: 128px;
+    position: absolute;
+    right: 0px;
+    bottom:20px;
+}
+.list{
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top:0px;
+    left:0;
+    z-index:1;
+    padding: 20px 0;
+    width: 234px;
+}
+.list-item>a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+    padding-right: 25px;
+    font-size: 14px;
+    color: #fff;
+}
+.list-item>a:hover{
+    background: #ff6700;
+}
+.icon-arrow{
+    float: right;
+}
+.sub-list{
+    position: absolute;
+    top:0;
+    left:234px;
+    background: #fff;
+    height:100%;
+    border-top:1px solid #e0e0e0;
+    box-shadow:0px 5px 17px rgba(0,0,0,0.18);
+    display: none;
+}
+.sub-list-3{
+    width: 796px;
+}
+.sub-list ul{
+    float: left;
+    width: 265px;
+}
+.sub-list ul li{
+    padding: 18px 15px 18px 20px;
+    overflow: hidden;
+}
+.list-img{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+.list-title{
+    font-size: 14px;
+    color: #333;
+}
+.buy-btn{
+    float: right;
+    margin-top: 6px;
+    width: 58px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    border:1px solid #ff6700;
+    background: #fff;
+    color: #ff6700;
+    font-size: 12px;
+}
+.list-img-box{
+    float: left;
+    height: 100%;
+    width: 168px;
+}
+.list-img-box:hover span{
+    color: #ff6700;
+}
+.buy-btn:hover{
+    color: #fff;
+    background: #ff6700;
+}
+.list-item:hover .sub-list{
+    display: block;
+}
+/*轮播图结束*/
