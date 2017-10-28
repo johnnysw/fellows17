@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //为了判断用户输入的成绩的范围,我们使用了多重嵌套的if .. else语句
+    var num = window.prompt("请输入XXX的成绩!","");
+    //'1'*1 1   '67'*1 67  'abc'  NaN
+    num1 = num*1;//window.prompt方法始终只返回字符串,用这样的方法将其转换成数字
+    //parseInt(''0) ==>0  parseInt('') ==>NaN parseInt('   ') ==>NaN
+    if(num1 == 0){
+        num1= parseInt(num);
+    }
+    if (isNaN(num1)) {//不能将其它值转换成数字时将返回NaN,可以用内置的isNaN判断值是否是NaN
+        alert("您输入的不是一个数字!");
+    } else {
+        if (num<=100 && num>=90) {
+            alert("Excellent!");
+        } else {
+            if (num <90 && num>=80) {
+                alert("Good!");
+            } else {
+                if (num < 80 && num >= 70) {
+                    alert("So so!");
+                } else {
+                    if (num < 70 && num >=60) {
+                        alert("Be careful !!!");
+                    } else {
+                        if (num < 60 && num >= 0) {
+                            alert("Oh, NO!");
+                        } else {
+                            alert("USB!");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
