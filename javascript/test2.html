@@ -10,7 +10,7 @@
     var num = window.prompt("请输入XXX的成绩!","");
     //'1'*1 1   '67'*1 67  'abc'  NaN
     num1 = num*1;//window.prompt方法始终只返回字符串,用这样的方法将其转换成数字
-    //parseInt(''0) ==>0  parseInt('') ==>NaN parseInt('   ') ==>NaN
+    //parseInt('0') ==>0  parseInt('') ==>NaN parseInt('   ') ==>NaN
     if(num1 == 0){
         num1= parseInt(num);
     }
