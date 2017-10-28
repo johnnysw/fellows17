@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //让用户输入生日
+   /* var year=window.prompt("请输入出生年份!","")*1;
+    var month=window.prompt("请输入出生月份!","")*1;
+    var date = window.prompt("请输入出生日!","")*1;
+    if (!year || !month || !date) {//NaN转换成布尔值将会是false
+        alert("您的输入有误!");
+    } else {
+        var timeMachine=new Date();
+        timeMachine.setFullYear(year);
+        timeMachine.setMonth(month-1);//记住,月份是从0开始计数的
+        timeMachine.setDate(date);
+        var trueYear = timeMachine.getFullYear();
+        var trueMonth = timeMachine.getMonth()+1;//记住,月份是从0开始计数的
+
+        console.log(trueMonth);
+        var trueDate = timeMachine.getDate();
+        if (trueYear != year || trueMonth != month || trueDate != date) {
+            alert("您撒谎!");
+        } else {
+            alert("虽然这个时光机能知道输入的日期是否有效,至于人是不是在那天生的,它是不能去看一看的!");
+        }
+    }*/
+    var date = new Date();
+    date.setDate(32);
+    console.log(date.getMonth()+1);
+    console.log(date.getDate());
+</script>
+
+</body>
+</html>
