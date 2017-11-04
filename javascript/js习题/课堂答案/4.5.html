@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /* 1.	在页面上输出如下数字图案。
+    1
+    1 2
+    1 2 3
+    1 2 3 4
+    1 2 3 4 5*/
+
+    function aa(n){
+        for(var i=1;i<=n;i++){
+            //第一层for循环输出行
+            for(j=1;j<=i;j++){
+                //第二层for循环输出列
+                document.write(j+"&nbsp");
+            }
+            document.write("<br/>");
+        }
+    }
+    aa(9);
+
+
+
+
+
+</script>
+
+</body>
+</html>

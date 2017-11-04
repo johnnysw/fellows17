@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*
+    *1.	编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+    */
+
+    /*1! 1
+    2! 1*2
+    3! 1*2*3
+    n! (n-1)! *n*/
+
+    //递归
+
+    function fac(n){
+        if(n == 1){
+            return 1;
+        }
+        return n * fac(n-1);
+        // 10 * 9* 8*...*1
+    }
+    console.log(fac(10));
+
+    //n!   n*(n-1)*(n-2)...1;
+
+    function fac1(n){
+        var sum =1;
+        for(var i=1; i<=n; i++){
+            //sum = sum*i;
+            sum *=i;
+        }
+        return sum;
+    }
+
+    console.log(fac1(10));
+
+//1.	编写程序，计算 1!+2!+3!+…..＋10！的结果。
+    var sum = 0;
+    for(var i=1; i<=10; i++){
+        sum +=fac(i);
+    }
+    console.log(sum);
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

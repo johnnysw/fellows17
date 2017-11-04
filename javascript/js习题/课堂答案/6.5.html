@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*编制一个将两个字符串交叉合并的函数Merge(s1,s2)，例如Merge("123","abc"）*/
+    /*的返回结果是"1a2b3c"，如果两个字符串的长度不同，那么就将多余部分直接合并到*/
+    <!--结果字符串的末尾，如Merge("123456",''abc''）的返回结果是”1a2b3c456”。-->
+
+
+    function Merge(s1,s2){
+        var l1 = s1.length;
+        var l2 = s2.length;
+        var length = Math.min(l1,l2);
+        var maxStr = l1>l2? s1 :s2;
+        var str = "";
+        for(var i=0; i<length;i++){
+            str += (s1[i] + s2[i]);
+        }
+       // 1a2b3c
+        str += maxStr.substring(length,(maxStr.length));
+        return str;
+    }
+    console.log(Merge("123456","abc"));
+
+    function Merge1(s1,s2) {
+        var str = "" ;
+        var length = Math.max(s1.length,s2.length);
+        for(var i=0; i<length;i++){
+            if(s1.length > i){
+                str += s1[i];
+            }
+            if(s2.length > i){
+                str += s2[i];
+            }
+        }
+        return str;
+    }
+
+    console.log(Merge1("123456","abc"));
+
+
+
+
+</script>
+
+</body>
+</html>

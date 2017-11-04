@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+
 /*
     function aa(){
         console.log("aa");
@@ -20,14 +21,35 @@
     var x = add(3,4);
     console.log(x);*/
 //    var a;
-    function bb(){
+  /*  function bb(){
         var a = 5;
         return a;
 //        console.log(a+"aaa");
     }
 
 
-    console.log(bb()+"bbb");
+    console.log(bb()+"bbb");*/
+
+    aa("a",2,3);
+
+    function aa(a,b){
+        arguments[0] = 'xxx';
+//        a = 'b';
+        console.log(a);
+
+        console.log(a+","+b);
+    }
+
+
+    bb();
+
+    var bb = function(){
+        console.log("hehe");
+    }
+
+
+
+
 
 </script>
 

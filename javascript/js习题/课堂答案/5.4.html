@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+//    1.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。
+    function sushu(num){
+       //100   2.. 99
+       /* 10
+        2 --  Math.sqrt(10)  ---10*/
+        for(var i=2; i< num; i++){
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    function sushu1(num){
+        //100   2.. 99
+        /* 10
+         2 --  Math.sqrt(10)  ---10*/
+        for(var i=2; i<= Math.sqrt(num); i++){
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+//    console.log(sushu(786));
+    for(var i= 100; i<=1000; i++){
+        if(sushu(i)){
+            document.write(i+",");
+        }
+    }
+    document.write('<br/>');
+    for(var i= 100; i<=1000; i++){
+        if(sushu1(i)){
+            document.write(i+",");
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+//    pow(-1,n-1)/(2*n -1)
+    function pi(n){
+        var sum = 0;
+        for(var i=1; i<=n; i++){
+            sum += Math.pow(-1,(i-1))/(2*i -1);
+        }
+        return sum * 4;
+    }
+    console.log(pi(1000000));
+
+</script>
+
+</body>
+</html>
