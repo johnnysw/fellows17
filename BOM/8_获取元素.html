@@ -21,6 +21,11 @@
         <li>034</li>
         <li class="aa">044</li>
     </ul>
+    <input type="checkbox" />11
+    <input type="checkbox"/>22
+    <input type="checkbox"/>33
+    <input type="radio" name="sex"/>男
+    <input type="radio" name="sex"/>女
     <script>
 
         /*var oDiv = document.getElementById('div1');//返回一个dom对象 如果没有返回null
@@ -39,7 +44,7 @@
 //            aLi[i].style.background = 'black';
         }
 
-        var aLi2 = document.getElementsByClassName('aa');
+        var aLi2 = document.getElementsByClassName('aa'); //dom3
 
         for(var i=0; i<aLi2.length; i++){
             aLi2[i].style.background = 'green';
@@ -49,24 +54,13 @@
 //        aLi[0].style.background = 'red';
 //        className
 
-        function getEleByClassName(clsName){
-            var result = [];
-
-            var allELe = document.getElementsByTagName('*');
-            for(var i=0; i<allELe.length; i++){
-                if(allELe[i].className == clsName){
-                    result.push(allELe[i]);
-                }
-            }
-            return result;
+       var aCheckbox =  document.getElementsByName('sex');//通过name获取元素 返回数组
+        for(var i=0; i<aCheckbox.length; i++){
+            aCheckbox[i].className = 'bb';
         }
+        console.log(aCheckbox[1].aa);
 
-        var aA =  getEleByClassName('aa');
-
-        for(var j=0; j<aA.length; j++){
-            aA[j].style.background = 'red';
-
-        }
+        
 
 
 

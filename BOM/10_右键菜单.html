@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        ul{
+            list-style: none;
+        }
+        #ul1{
+            width: 120px;
+            border:1px solid #eee;
+            border-radius: 5px;
+            padding: 5px 0;
+            display: none;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        #ul1 li{
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+
+        }
+        #ul1 li:hover{
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>设为代办</li>
+    <li>设为已读</li>
+    <li>置顶邮件</li>
+    <li>添加备注</li>
+    <li>删除</li>
+</ul>
+
+<script>
+    /*事件
+    * 事件三要素：事件源 事件处理函数 事件
+    */
+    var oUl = document.getElementById('ul1');
+    var aLi = oUl.getElementsByTagName('li');
+    document.oncontextmenu = function(e){
+        e = e || window.event;  //e标准浏览器  window.event ie浏览器
+       // console.log(e.clientX+","+e.clientY); //鼠标坐标X  Y
+        oUl.style.display = 'block';
+        oUl.style.left = e.clientX +"px";
+        oUl.style.top = e.clientY +"px";
+        return false;//阻止默认行为
+    }
+    document.onclick = function () {
+        oUl.style.display = 'none';
+    }
+    for(var i=0; i<aLi.length;i++){
+        aLi[i].onclick = function(){
+            //点击后才执行
+           // this  //返回对当前对象的引用
+            console.log(this.innerHTML);
+        }
+    }
+    //i = 5  点击的时候i是5  for循环在页面一刷新的时候就初始化完成了，i值变为5.
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
