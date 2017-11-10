@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div id="div1" >
+    111
+</div>
+<ul id="ul1">
+    <li class="aabb">014</li>
+    <li>024</li>
+    <li class="aa">034</li>
+    <li class="aa bb">044</li>
+</ul>
+<ul id="ul2" >
+    <li>014</li>
+    <li class="aabb">024</li>
+    <li>034</li>
+    <li class="aa">044</li>
+</ul>
+<script>
+
+
+
+    function getEleByClassName(clsName,context){
+        var result = [];
+        /* if(context){  //如果传参数 context值是传的对象 那么从 context下取
+             var parentEle = context;
+        }else{ //如果没传参 context 值是undefined
+             var parentELe = document;
+        }
+        var allELe = parentEle.getElementsByTagName('*');*/
+        var parentEle = context || document;
+        var allELe = parentEle.getElementsByTagName('*');
+        for(var i=0; i<allELe.length; i++){
+            var arr = allELe[i].className.split(' '); //'aa bb' ==> ['aa','bb']; ['aabb']
+            for(var j=0; j<arr.length; j++){
+                if(arr[j] == clsName){
+                    result.push(allELe[i]);
+                }
+            }
+        }
+        return result;
+    }
+    var oUl1 = document.getElementById('ul1');
+    var aA =  getEleByClassName('aa',oUl1);
+    for(var j=0; j<aA.length; j++){
+        aA[j].style.background = 'red';
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

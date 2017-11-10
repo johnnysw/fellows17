@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var num = 0;
+   /* var timer = setInterval(function(){
+        num++;
+        console.log(Math.random());
+        if(num == 10){
+            clearInterval(timer);
+        }
+    },500);*/
+
+   /* timer1 = setTimeout(function(){
+        console.log(Math.random());
+    },500);
+
+    clearTimeout(timer1);*/
+
+   /* var flag = true;
+    while(flag){
+        setTimeout(function(){
+            console.log(Math.random());
+        },500);
+    }*/
+
+
+
+
+    function aa(){
+        setTimeout(function(){
+            console.log(Math.random());
+            aa();
+        },500);
+    }
+
+    aa();
+
+
+
+
+
+
+</script>
+</body>
+</html>

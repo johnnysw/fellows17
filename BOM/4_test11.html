@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 2000px;
+        }
+        #to-top{
+            width: 36px;
+            height: 72px;
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: url("go-top.jpeg") -22px 0 no-repeat;
+        }
+        #to-top:hover{
+            background: url("go-top.jpeg") -112px 0 no-repeat;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="to-top">
+    
+</a>
+
+<a href="aa.html">aaa</a>
+<script>
+
+    var oBtn = document.getElementById('to-top');
+
+    oBtn.onclick = function(){
+        var iTop = document.documentElement.scrollTop || document.body.scrollTop
+        var timer = setInterval(function(){
+//            window.scrollTo(0,iTop -= 50);
+            window.scrollTo(0,iTop*=0.8);
+            console.log(iTop);
+            if(iTop <= 1){
+                clearInterval(timer);
+            }
+        },100)
+    }
+
+
+</script>
+
+</body>
+</html>

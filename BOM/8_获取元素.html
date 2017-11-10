@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <div id="div1" >
+        111
+    </div>
+    <ul id="ul1">
+        <li>014</li>
+        <li>024</li>
+        <li>034</li>
+        <li>044</li>
+    </ul>
+    <ul id="ul2" >
+        <li>014</li>
+        <li class="aa">024</li>
+        <li>034</li>
+        <li class="aa">044</li>
+    </ul>
+    <script>
+
+        /*var oDiv = document.getElementById('div1');//返回一个dom对象 如果没有返回null
+
+
+        oDiv.onclick = function(){
+            oDiv.style.background = 'red';
+            oDiv.style.color = 'white';
+        }
+
+        var oUl2 = document.getElementById('ul2');
+        var aLi = oUl2.getElementsByTagName('li');  //返回节点列表 类数组 如果没有返回空数组
+
+//        oUl2.style.background = 'orange';
+        for(var i=0; i<aLi.length; i++){
+//            aLi[i].style.background = 'black';
+        }
+
+        var aLi2 = document.getElementsByClassName('aa');
+
+        for(var i=0; i<aLi2.length; i++){
+            aLi2[i].style.background = 'green';
+        }*/
+
+
+//        aLi[0].style.background = 'red';
+//        className
+
+        function getEleByClassName(clsName){
+            var result = [];
+
+            var allELe = document.getElementsByTagName('*');
+            for(var i=0; i<allELe.length; i++){
+                if(allELe[i].className == clsName){
+                    result.push(allELe[i]);
+                }
+            }
+            return result;
+        }
+
+        var aA =  getEleByClassName('aa');
+
+        for(var j=0; j<aA.length; j++){
+            aA[j].style.background = 'red';
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
