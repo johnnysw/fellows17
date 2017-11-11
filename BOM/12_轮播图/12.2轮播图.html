@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 680px;
+            height: 344px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #tab{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #tab li.selected{
+            background: orange;
+        }
+        #prev-btn, #next-btn{
+            position: absolute;
+            bottom: 10px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background: #000000;
+            color: #fff;
+        }
+        #prev-btn{
+            left: 10px;
+        }
+        #next-btn{
+            left: 35px;
+        }
+
+        #img-box{
+            width: 2720px;
+            position: absolute;
+        }
+        #img-box img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="img-box">
+        <img class="selected" src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpg" alt=""/>
+        <img src="img/4.jpg" alt=""/>
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <span id="prev-btn">&lt;</span>
+    <span id="next-btn">&gt;</span>
+</div>
+<script src="../jslib.js"></script>
+<script>
+    var oContainer = document.getElementById('container');
+    var oTab = document.getElementById('tab');
+    var aLi = oTab.getElementsByTagName('li');
+    var oImgBox = document.getElementById('img-box');
+    var aImg = oImgBox.getElementsByTagName('img');
+    var oNextBtn = document.getElementById('next-btn');
+    var oPrevBtn = document.getElementById('prev-btn');
+
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            for(var j=0; j<aLi.length;j++){
+                aLi[j].className = '';
+            }
+            this.className = 'selected';
+            //0   0
+            //1   680
+            //2    2*680
+            animate(oImgBox,{left:-this.index * 680});
+            //oImgBox.style.left = -this.index * 680 +"px";
+        }
+    }
+</script>
+
+</body>
+</html>

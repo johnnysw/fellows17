@@ -78,37 +78,61 @@
         <span id="next-btn">&gt;</span>
     </div>
     <script>
+        var oContainer = document.getElementById('container');
         var oTab = document.getElementById('tab');
         var aLi = oTab.getElementsByTagName('li');
         var oImgBox = document.getElementById('img-box');
         var aImg = oImgBox.getElementsByTagName('img');
         var oNextBtn = document.getElementById('next-btn');
+        var oPrevBtn = document.getElementById('prev-btn');
         var iNow = 0;
+        var timer;
 
         for(var i=0; i<aLi.length; i++){
             aLi[i].index = i;
             aLi[i].onmouseover = function(){
-                for(var j=0;j<aLi.length; j++){
-                    aLi[j].className = '';
-                    aImg[j].className = '';
-                }
-                this.className = 'selected';
-                aImg[this.index].className = 'selected';
+                iNow = this.index;
+                changeImg(this.index);
             }
         }
-
         oNextBtn.onclick = function(){
             iNow++;
             if(iNow >= aImg.length){
                 iNow = 0;
             }
+            changeImg(iNow);
+        }
+        oPrevBtn.onclick = function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = aImg.length-1;
+            }
+            changeImg(iNow);
+        }
+        function changeImg(idx){ //在函数中this指向window
             for(var j=0;j<aLi.length; j++){
                 aLi[j].className = '';
                 aImg[j].className = '';
             }
-            aLi[iNow].className = 'selected';
-            aImg[iNow].className = 'selected';
+            aLi[idx].className = 'selected';
+//                this.className = 'selected';
+            aImg[idx].className = 'selected';
         }
+        run();
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            run();
+        };
+        function run(){
+            timer = setInterval(function(){
+                oNextBtn.onclick();
+            },1000);
+        }
+
+
+
 
 
 

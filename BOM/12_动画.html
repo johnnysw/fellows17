@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script src="jslib.js"></script>
+    <script>
+
+        /*var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+            //console.log(this.style.width);//obj.style.width  能赋值，只能取到内联样式的值
+            var timer = setInterval(function(){//setInterval中this指向window
+                oDiv1.style.width = oDiv1.offsetWidth + 10 +'px';
+                oDiv1.style.height = oDiv1.offsetHeight + 10 +'px';
+                if(oDiv1.offsetWidth >= 500){
+                    clearInterval(timer);
+                }
+            },50);
+        }*/
+
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+
+            animate(oDiv1,{width:800,height:500,opacity:10,left:50});
+        }
+        /*left -index*imgWidth*/
+
+
+    </script>
+
+</body>
+</html>

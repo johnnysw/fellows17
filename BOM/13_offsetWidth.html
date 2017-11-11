@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 10px;
+            border:10px solid #000;
+            margin:20px;
+            position: absolute;
+            left: 50px;
+        }
+        #div2{
+            width: 500px;
+            height: 500px;
+            /*position: relative;*/
+            background: #0000ff;
+            left:30px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="div2">
+    <div id="div1">
+
+    </div>
+</div>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    //offsetWidth   只能取值 不能赋值
+
+   // oDiv1.offsetWidth = oDiv1.offsetWidth +50 +'px';
+    console.log(oDiv1.offsetWidth); //border以内的宽度（包含border） border+padding+width
+    console.log(oDiv1.offsetHeight);
+    console.log(oDiv1.offsetLeft);
+    console.log(oDiv1.offsetTop);
+    console.log(oDiv1.offsetParent);
+
+
+</script>
+
+</body>
+</html>
