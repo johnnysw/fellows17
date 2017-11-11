@@ -82,6 +82,8 @@
         var aLi = oTab.getElementsByTagName('li');
         var oImgBox = document.getElementById('img-box');
         var aImg = oImgBox.getElementsByTagName('img');
+        var oNextBtn = document.getElementById('next-btn');
+        var iNow = 0;
 
         for(var i=0; i<aLi.length; i++){
             aLi[i].index = i;
@@ -94,6 +96,25 @@
                 aImg[this.index].className = 'selected';
             }
         }
+
+        oNextBtn.onclick = function(){
+
+            iNow++;
+
+            if(iNow >= aImg.length){
+                iNow = 0;
+            }
+
+            for(var j=0;j<aLi.length; j++){
+                aLi[j].className = '';
+                aImg[j].className = '';
+            }
+            aLi[iNow].className = 'selected';
+            aImg[iNow].className = 'selected';
+        }
+
+
+
 
 
 
