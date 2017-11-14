@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #ul1{
+            width: 120px;
+            border:1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 0;
+            display: none;
+        }
+        #ul1 li{
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        #ul1 li:hover{
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>设为代办</li>
+    <li>设为已读</li>
+    <li>置顶邮件</li>
+    <li>添加备注</li>
+    <li>删除</li>
+</ul>
+
+<script>
+    var oUl = document.getElementById('ul1');
+    document.oncontextmenu = function(){
+        oUl.style.display = 'block';
+        return false; //阻止默认行为
+    }
+
+</script>
+</body>
+</html>

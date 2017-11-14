@@ -24,25 +24,28 @@
 <body>
     <div>
     hdsdjjhdjkl;.l,kmjhbgvfcdfvghjkl.;/.,bvbn
+        <a href=""></a>
     </div>
     <img src="img/1.jpg" alt=""/>
     <img src="img/2.jpg" alt=""/>
     <img src="img/3.jpg" alt=""/>
     <img src="img/4.jpg" alt=""/>
     <div id="div1">
-
     </div>
-
     <script>
-
         var oDiv = document.getElementById('div1');
         oDiv.onclick = function(){
-            window.scrollTo(0,500);
+//            scrollTo(0,500);
+            //滚动条距离上边的距离
+            var timer = setInterval(function(){
+                //document.documentElement   ==>body
+                var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop ;
+                window.scrollTo(0,iScrollTop-50);
+                if(iScrollTop <= 0){
+                    clearInterval(timer);
+                }
+            },50);
         }
-
-
-
-
 
     </script>
 

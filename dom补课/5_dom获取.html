@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        /*.aa{
+            background: red;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="div1"  >
+
+        sdfghj
+    </div>
+    <span id="div2"  >
+
+        yugfiurhuf
+    </span>
+    <p>xdfghjk</p>
+    <p>fghjkl</p>
+
+    <form action="">
+       用户名：<input type="text" name = 'username'/>
+       密码 ： <input type="text" name = 'password'/>
+    </form>
+    <ul>
+        <li>001</li>
+        <li class="aa">002</li>
+        <li>003</li>
+        <li class="aa">004</li>
+        <li>005</li>
+    </ul>
+    <script>
+        var oDiv = document.getElementById('div1'); //取到的dom对象  没有返回null
+        oDiv.style.color = '#0000ff';
+        oDiv.style.background = "black";
+        oDiv.onclick = function(){
+            oDiv.style.background = "orange";
+        }
+
+        var aP = document.getElementsByTagName('p'); //返回数组 没有返回空数组
+
+        aP[0].style.background = 'red';
+        for(var i=0; i<aP.length; i++){
+            aP[i].onclick = function(){
+                alert('haha');
+            }
+        }
+
+        var aUsername = document.getElementsByName('username');//返回数组 没有返回空数组
+        aUsername[0].style.background = 'red';
+
+        var aLi  = document.getElementsByClassName('aa');//返回数组 没有返回空数组
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].style.background = "blue";
+        }
+
+
+    </script>
+
+</body>
+</html>
