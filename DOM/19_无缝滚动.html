@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        ul{
+            width: 520px;
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            margin-right: 10px;
+            background: #000000;
+            color:#fff;
+            font-size: 40px;
+            text-align: center;
+            line-height: 120px;
+            float: left;
+        }
+        #arrow{
+            position: absolute;
+            bottom:20px;
+            left:50%;
+            margin-left: -100px;
+
+        }
+        #arrow span{
+            width: 100px;
+            height: 40px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 40px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrow">
+            <span> &lt&lt向左</span>
+            <span> 向右&gt&gt</span>
+        </div>
+        
+    </div>
+</body>
+</html>

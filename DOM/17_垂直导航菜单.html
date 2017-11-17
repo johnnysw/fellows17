@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #menu{
+            width: 200px;
+            border:1px solid #000;
+        }
+        h2{
+            background: #000000;
+            color: #Fff;
+        }
+        #menu ul{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <h2>管理区</h2>
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </li>
+    <li>
+        <h2>交流区</h2>
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var aH2 = document.getElementsByTagName('h2');
+   // var flag = false;  //false 代表隐藏  true 代表显示
+    for(var i=0; i<aH2.length; i++){
+        aH2[i].flag = false;
+        aH2[i].onclick = function(){
+            var oNext = next(this);
+            if(this.flag){
+                oNext.style.display = 'none';
+            }else{
+                oNext.style.display = 'block';
+            }
+            this.flag = !this.flag;
+        }
+    }
+    function next(elem){
+        do{
+            elem = elem.nextSibling; //elem = null
+        }while( elem && elem.nodeType !=1 );
+        return elem;
+    }
+</script>
+<!--<script>
+    var aH2 = document.getElementsByTagName('h2');
+    for(var i=0; i<aH2.length; i++){
+        aH2[i].onclick = function(){
+            var oNext = next(this);
+            //.style.属性 只能取到内联样式
+            if(oNext.style.display == 'none' || oNext.style.display == ''){
+                oNext.style.display = 'block';
+            }else{
+                //添加到内联
+                oNext.style.display = 'none';
+            }
+        }
+    }
+    function next(elem){
+        do{
+            elem = elem.nextSibling; //elem = null
+        }while( elem && elem.nodeType !=1 );
+        return elem;
+    }
+</script>-->
+
+</body>
+</html>

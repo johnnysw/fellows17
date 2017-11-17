@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+        dfghjkl
+        <span id="span1">hhhh</span>
+    </div>
+
+    <script>
+        var oP = document.createElement('p');
+        oP.innerHTML = 'dfghjk';
+        var oDiv = document.getElementById('div1');
+        var oSpan = document.getElementById('span1');
+
+       /* oDiv.appendChild(oP);
+        oDiv.removeChild(oSpan);*/
+        //oDiv.replaceChild(oP,oSpan);
+//        oDiv.insertBefore(oP,oSpan);
+//        document.body.appendChild(oSpan.cloneNode(true));
+
+        //节点操作
+        //createElement()
+        //appendChild()
+        //removeChild()
+        //replaceChild()
+        //insertBefore()
+        //cloneNode()
+
+//        oDiv.xx = 'hahah';
+
+        oDiv.setAttribute('xx','aaaa');
+        console.log(oDiv.getAttribute('xx'));
+    </script>
+
+</body>
+</html>

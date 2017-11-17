@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div1">dfghujio</div>
+    <ul id="ul1">
+        <li>014</li>
+        <li class="aa">024</li>
+        <li>034</li>
+        <li class="aa">044</li>
+    </ul>
+
+    <input type="text" name="username"/>
+
+<script>
+
+   /* var oDiv = document.getElementById('div1'); //dom对象  没有返回null
+
+    var aLi = document.getElementsByTagName('li');
+    var aLi2 = document.getElementsByClassName('aa');
+    var oInput = document.getElementsByName('username')[0];*/
+
+   /* var oDiv2 = document.querySelector('.aa');  //返回dom元素 如果有多个 返回第一个
+    console.log(oDiv2);*/
+
+   /* var aLi = document.querySelectorAll('.aa');
+
+    console.log(aLi);*/
+
+   /* document.documentElement  //取到html 节点
+    document.body  //取到body 节点*/
+
+   // console.log(document.head);
+/*
+    var oDiv = document.getElementById('div1');
+
+    console.log(oDiv.nodeValue);
+
+    console.log(oDiv.firstChild.nodeValue);*/
+//   console.log(oDiv.innerHTML.nodeType);
+    //元素节点  nodetype 1  属性节点  nodetype 2 文本   3
+    //节点的遍历
+
+var oUl = document.getElementById('ul1');
+//  console.log(oUl.firstChild);
+    /*console.log(oUl.firstElementChild); //dom3*/
+  /*  function next(elem){
+       do{
+           elem = elem.nextSibling; //elem = null
+       }while( elem && elem.nodeType !=1 );
+       return elem;
+    }
+    function first(elem){
+        elem = elem.firstChild;
+        return elem.nodeType == 1 ? elem : next(elem);
+    }
+    var oLi = first(oUl);
+    console.log(oLi);*/
+
+    console.log(oUl.children);  //
+
+
+//节点遍历
+  // firstChild——该元素节点包含的第一个子节点
+  // lastChild——该元素节点包含的最后一个子节点
+  // nextSibling——该节点的后一个兄弟节点
+  // previousSibling——该节点的前一个兄弟节点
+  // childNodes——子节点列表,可以通过node.childNodes[index]（或node.childNodes.item(index)）来获取子节点
+    //children
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

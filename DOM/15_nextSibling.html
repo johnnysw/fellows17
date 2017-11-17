@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div1">dfghujio</div>
+    <ul id="ul1">
+        <li>014</li>
+        <li class="aa">024</li>
+        <li>034</li>
+        <li class="aa" id="li0">044</li>
+    </ul>
+
+    <input type="text" name="username"/>
+
+<script>
+
+    var oDiv = document.getElementById('div1');
+
+//    console.log(oDiv.nextElementSibling);
+    var oLi = document.getElementById('li0');
+
+    function next(elem){
+        do{
+            elem = elem.nextSibling; //elem = null
+        }while( elem && elem.nodeType !=1 );
+        return elem;
+    }
+
+    console.log(next(oLi));
+
+
+  /*  var a = 5;
+    if(a){
+
+    }*/
+
+
+
+</script>
+
+</body>
+</html>

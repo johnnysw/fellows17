@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="drag">
+
+    </div>
+
+    <script>
+        var oDrag = document.getElementById('drag');
+
+        oDrag.onmousedown = function(e){
+            e = e || window.event;
+            var disX = e.clientX - oDrag.offsetLeft;//鼠标距离div左边的距离
+            var disY = e.clientY - oDrag.offsetTop;//鼠标距离div上边的距离
+            document.onmousemove = function(e){
+                e = e || window.event;
+                var iLeft = e.clientX - disX;
+                var iTop = e.clientY - disY;
+                oDrag.style.left = iLeft +"px";
+                oDrag.style.top = iTop +"px";
+            }
+            oDrag.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
