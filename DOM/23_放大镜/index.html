@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small-box{
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #b0b0b0;
+            opacity: 0.6;
+            filter: alpha(opacity = 60);
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        #big-box{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left:400px;
+            top:0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="small-box">
+        <img src="images/1.jpg" alt=""/>
+        <div id="drag">
+        </div>
+    </div>
+    <div id="big-box">
+        <img src="images/2.jpg" alt=""/>
+    </div>
+
+</body>
+</html>
