@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    1111
+    <div id="div2">
+        2222
+        <div id="div3">333333</div>
+    </div>
+</div>
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    oDiv1.onclick = function(e){
+        e = e || window.event;
+        console.log('div1');
+
+        e.stopPropagation();//阻止事件冒泡  标准浏览器
+        e.cancelBubble = true; //ie浏览器
+    }
+    oDiv2.onclick = function(e){
+        e = e || window.event;
+        console.log('div2');
+        e.stopPropagation();//阻止事件冒泡  标准浏览器
+        e.cancelBubble = true; //ie浏览器
+    }
+    oDiv3.onclick = function(e){
+        e = e || window.event;
+        console.log('div3');
+        e.stopPropagation();//阻止事件冒泡  标准浏览器
+        e.cancelBubble = true; //ie浏览器
+    }
+    //事件冒泡 从里往外  //事件捕获 从外往里   先执行捕获 在执行冒泡
+/*
+
+    oDiv1.addEventListener('click',function(){
+        console.log('div1 捕获');
+    },true);
+    oDiv2.addEventListener('click',function(){
+        console.log('div2 捕获');
+    },true);
+    oDiv3.addEventListener('click',function(){
+        console.log('div3 捕获');
+    },true);
+
+    oDiv1.addEventListener('click',function(){
+        console.log('div1 冒泡');
+    },false);
+    oDiv2.addEventListener('click',function(){
+        console.log('div2 冒泡');
+    },false);
+    oDiv3.addEventListener('click',function(){
+        console.log('div3 冒泡');
+    },false);
+*/
+
+
+
+</script>
+
+</body>
+</html>

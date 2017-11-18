@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">div2</div>
+    </div>
+    <script>
+        //1.定时器中this指向window
+       /* setInterval(function(){
+//            console.log(this);
+        },200);
+        setTimeout(function(){
+//            console.log(this);
+        },200);*/
+      /*  var person = {
+            name:'zhangsan',
+            age:19
+        };
+        //2.函数中this指向window
+        function aa(x,y){
+            console.log(x+","+y);
+            console.log(this.name);
+        }
+        //改变this指向
+        aa.call(person,4,5);
+        aa.apply(person,[4,5]);
+        aa.bind(person,4,5)();*/
+        //3.事件中 this对当前对象的引用
+        var oDiv = document.getElementById('div1');
+        oDiv.onclick = function(){
+            var _this = this;
+            setTimeout(function(){
+                console.log(_this);//this对当前对象的引用
+            },1000);
+           /* setTimeout(function(){
+                console.log(this);//this对当前对象的引用
+            }.bind(this),1000);*/
+        };
+        //4.对象 this对当前对象的引用
+       /* var cat = {
+            name:'mimi',
+            age:3,
+            eat:function(){
+                console.log(this.name+' is eating');
+            }
+        };
+        cat.eat();*/
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -21,6 +21,7 @@
         }
         ul{
             width: 520px;
+            position: absolute;
         }
         li{
             width: 120px;
@@ -58,12 +59,67 @@
             <li>2</li>
             <li>3</li>
             <li>4</li>
+
         </ul>
         <div id="arrow">
-            <span> &lt&lt向左</span>
-            <span> 向右&gt&gt</span>
+            <span id="left"> &lt&lt向左</span>
+            <span id="right"> 向右&gt&gt</span>
         </div>
         
     </div>
+
+    <script>
+        var oUl = document.getElementsByTagName('ul')[0];
+        var aLi = document.getElementsByTagName('li');
+        var oRightBtn = document.getElementById('right');
+        var oLeftBtn = document.getElementById('left');
+        var speed = -2;
+        oUl.innerHTML += oUl.innerHTML;
+        oUl.style.width = (aLi[0].offsetWidth + 10)*8 +"px";
+        setInterval(function(){
+            oUl.style.left = oUl.offsetLeft +speed +"px";
+
+            if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+                oUl.style.left = '0px';
+            }
+            if(oUl.offsetLeft > 0){
+                oUl.style.left = -oUl.offsetWidth/2 +"px";
+            }
+        },30);
+
+        oRightBtn.onmouseover = function(){
+            speed = 2;
+        }
+        oLeftBtn.onmouseover = function(){
+            speed = -2;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>
