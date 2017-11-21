@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var people = {
+        name:'zhangsan',
+        age:18
+    }
+
+    function add(x,y){
+        console.log(this.name);
+        return x+y;
+    }
+
+    add.call(people,3,4);
+    add.apply(people,[3,4]);
+    add.bind(people,3,4)();
+
+
+
+
+</script>
+
+</body>
+</html>

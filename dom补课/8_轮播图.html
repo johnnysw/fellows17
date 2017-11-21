@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #img-box img{
+            display: none;
+        }
+        #img-box .selected{
+            display: block;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color:#fff;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #container{
+            position: relative;
+            width: 680px;
+            height: 344px;
+        }
+        #tab{
+            position: absolute;
+            right:10px;
+            bottom:10px;
+        }
+        #prev-btn,#next-btn{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            text-align: center;
+            line-height: 20px;
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+        }
+        #prev-btn{
+            left:10px;
+        }
+        #next-btn{
+            left:40px;
+        }
+
+        /*行级元素不能设置宽高 横着分布  a span
+          块级元素可以设置宽高  竖着分布 div p ul li h1-h6
+        */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img-box">
+            <img class="selected" src="img/1.jpg" alt=""/>
+            <img src="img/2.jpg" alt=""/>
+            <img src="img/3.jpg" alt=""/>
+            <img src="img/4.jpg" alt=""/>
+        </div>
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <span id="prev-btn">&lt;</span>
+        <span id="next-btn">&gt;</span>
+    </div>
+    <script>
+        var aImg = document.getElementsByTagName('img');
+        var aLi = document.getElementsByTagName('li');
+        var oNextBtn = document.getElementById('next-btn');
+        var oContainer = document.getElementById('container');
+        var iNow = 0;
+        var timer;
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].idx = i; //aLi[0].idx = 0 aLi[1].idx = 1
+            aLi[i].onmouseover = function(){
+                iNow = this.idx;
+                changeImg(this.idx);
+            }
+        }
+        oNextBtn.onclick = function(){
+            iNow++;
+            if(iNow == aLi.length){
+                iNow = 0;
+            }
+            changeImg(iNow);
+        }
+        function changeImg(index){  //函数中this指向window
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].className = '';
+                aImg[j].className = '';
+            }
+            aLi[index].className = 'selected';
+            aImg[index].className = 'selected';
+        }
+        run();
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            run();
+        }
+        function run(){
+            timer = setInterval(function(){
+                oNextBtn.onclick();
+            },1000);
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

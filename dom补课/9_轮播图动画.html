@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+  /*      #img-box img{
+            display: none;
+        }
+        #img-box .selected{
+            display: block;
+        }*/
+        #img-box{
+            width: 2720px;
+            position: absolute;
+        }
+        #img-box img{
+            float: left;
+        }
+
+
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color:#fff;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #container{
+            position: relative;
+            width: 680px;
+            height: 344px;
+            overflow: hidden;
+        }
+        #tab{
+            position: absolute;
+            right:10px;
+            bottom:10px;
+        }
+        #prev-btn,#next-btn{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            text-align: center;
+            line-height: 20px;
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+        }
+        #prev-btn{
+            left:10px;
+        }
+        #next-btn{
+            left:40px;
+        }
+
+        /*行级元素不能设置宽高 横着分布  a span
+          块级元素可以设置宽高  竖着分布 div p ul li h1-h6
+        */
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="img-box">
+        <img src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpg" alt=""/>
+        <img src="img/4.jpg" alt=""/>
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <span id="prev-btn">&lt;</span>
+    <span id="next-btn">&gt;</span>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var aImg = document.getElementsByTagName('img');
+    var aLi = document.getElementsByTagName('li');
+    var oNextBtn = document.getElementById('next-btn');
+    var oContainer = document.getElementById('container');
+    var oImgBox = document.getElementById('img-box');
+    var iNow = 0;
+    var timer;
+
+  /*  0  0
+    1  -1 width
+    2  -2 img.width*/
+
+    for(var i=0; i<aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            //oImgBox.style.left = -this.index*680 +"px";
+            animate(oImgBox,{
+                left:-this.index*680
+            });
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

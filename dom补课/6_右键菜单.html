@@ -15,8 +15,9 @@
             width: 120px;
             border:1px solid #ccc;
             border-radius: 5px;
-            padding: 5px 0;
+            padding:5px 0;
             display: none;
+            position: absolute;
         }
         #ul1 li{
             height: 20px;
@@ -36,15 +37,35 @@
     <li>设为已读</li>
     <li>置顶邮件</li>
     <li>添加备注</li>
-    <li>删除</li>
+    <li>&nbsp;删除</li>
 </ul>
-
 <script>
     var oUl = document.getElementById('ul1');
-    document.oncontextmenu = function(){
+    var aLi = document.getElementsByTagName('li');
+    //事件  事件源 事件处理函数 事件
+    document.oncontextmenu = function(e){
+        e = e || window.event;
+//        console.log(e.clientX +","+e.clientY); e.clientX 获取鼠标距离屏幕左边的距离 ，e.client距离上边的距离
+       // e.clientX   e.clientY
         oUl.style.display = 'block';
+        oUl.style.left = e.clientX +"px" ;
+        oUl.style.top = e.clientY +"px" ;
         return false; //阻止默认行为
     }
+    document.onclick = function(){
+        oUl.style.display = 'none';
+    }
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            //this 对当前对象的引用
+            console.log(this.innerHTML);  //innerText
+        }
+    }
+
+
+
+
+
 
 </script>
 </body>

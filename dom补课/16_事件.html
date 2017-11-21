@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div1</div>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+
+       /* oDiv.onclick = function(){
+            alert(222);
+        }
+        oDiv.onclick = function(){
+            alert(1111);
+        }*/
+
+       /* oDiv.addEventListener('click',function(){
+            alert(111);
+        },false);
+        oDiv.addEventListener('click',function(){
+            alert(2222);
+        },false);*/
+
+       /* oDiv.attachEvent('onclick',function(){
+            alert(111);
+        })
+        oDiv.attachEvent('onclick',function(){
+            alert(222);
+        })*/
+
+        function addEvent(elem,type,fn,flag){
+            if(elem.addEventListener){
+                elem.addEventListener(type,fn,flag);
+            }else{//attachEvent绑定事件 this 指向window
+                elem.attachEvent('on'+type,fn.bind(elem));
+            }
+        }
+
+        addEvent(oDiv,'click',function(){
+
+            alert(this.innerHTML);
+        },false);
+       /* addEvent(oDiv,'click',function(){
+            alert(222);
+        },false);*/
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            background: #ff0000;  /*块级元素可以设置宽高  竖着分布 div p ul li h1-h6*/
+            width: 500px;
+            height: 500px;
+            display: inline;/*行级元素*/
+        }
+        #aaa{
+            background: orange;
+            width: 400px;
+            height: 400px;
+            /*display: block;/!*块级元素*!/*/
+            /*display: none;*/
+            display: inline-block;/*行级块元素   既可以设置宽高 又可以横着分布 a span*!/*/
+        }
+
+        /*行级元素不能设置宽高 横着分布  a span*/
+    </style>
+</head>
+<body>
+    <div id="div1">fcghjkl;</div>
+    <div id="div2">fcghjkl;</div>
+
+    <a href="#" id="aaa">aaaaaaa</a>
+    <a href="#">bbbbbb</a>
+
+</body>
+</html>
