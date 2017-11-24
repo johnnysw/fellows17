@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 20px;
+            margin: 40px;
+            border:5px solid #000;
+        }
+        .bb{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">
+        111
+        <p>fghjk</p>
+    </div>
+    <div id="div2" class="aa">22</div>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+    <div class="cc"></div>
+    <input type="checkbox"/>
+    <input type="text" value="1111"/>
+    <button id="btn">click</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /*$("#div1").attr('class','aa');*/
+
+      /*  $("#div1").removeAttr('class');
+
+        $(":checkbox").prop('checked','checked');
+        
+        $("[type='text']").val('2222');
+
+        $("[type='text']").focus(function(){
+            $(this).val("");
+        });*/
+//        $("#div1").addClass('bb');
+       /* var oDiv = document.getElementById('div1');
+        oDiv.className = "aa bb";*/
+
+//       console.log( $("#div1").attr('class'));
+        /*$('#div1').css({
+            background:'red',
+            width:'200px',
+            color:'#ff0'
+        })*/
+//       console.log($('#div1').hasClass('gg'));
+        /*$('#div1').click(function(){
+            $('#div1').toggleClass('bb');
+
+        });*/
+       /* console.log($('li').height());
+         console.log($('#div1').innerHeight());
+         console.log($('#div1').outerHeight());*/
+
+//        $("#div2").html(    $('#div1').clone() );
+//        var oDIv =
+//                $('.cc')
+//       $('.aa').wrap($('.cc'));
+
+//        $('#div1').css('background','yellow').height(800).width(800);
+
+//        $('#div1').append('<p>fghgfghjhg</p>').height(800).width(800);
+
+       /*$('<p>fghgfghjhg</p>').appendTo('#div1').height(800).width(800);*/
+
+//       $('#div1').html('hhhhh<p>00000</p>');
+//        $('#div1').text('hhhhh<p>00000</p>');
+
+        var a = $('#div1').detach();
+
+        $('#btn').click(function(){
+            $('#div2').before(a);
+        });
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
