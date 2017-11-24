@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<script>
+    /*var aLi = document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            console.log(this.index);
+        }
+    }*/
+
+
+    //闭包 外部函数中有一个内部函数  内部函数使用外部函数中的变量 ，外部函数中变量不释放
+
+    var aLi = document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+
+        (function(idx){
+            aLi[i].onclick = function(){
+                console.log(idx);
+            }
+        })(i);
+
+    }
+
+    /*var aa = function(){
+        console.log(1);
+    }
+    aa();*/
+        //函数的立即调用
+   /* (function(num){
+        console.log(num);
+    })(5);*/
+
+    function aa(){
+        var x = 5;
+    }
+    aa();
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

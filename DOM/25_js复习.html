@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    基本数据类型 : number string boolean undefined null
+    undefined: 1 变量定义了 没有赋值
+               2 数组越界
+               3 对象下没有的属性
+               4 函数没有返回值
+
+    null: getElementById() 找不到
+
+
+
+    引用数据类型: 数组 对象
+
+    BOM  window  history  navigator.userAgent  location   dom
+
+    document.getElementById()
+    document.getElementsByClassName
+    document.getElementsByTagName
+    document.getElementsByName
+    querySelector();
+    querySelectorAll();
+
+    查找遍历：
+    firstChild  firstElementChild
+    lastChild
+    nextSibling
+    previousSibling
+
+    parentNode
+    children
+
+    操作:
+
+    creatElement('div');
+    removechild();
+    replaceChild(newObj,oldObj);
+    insertBefore(newObj,oldObj);
+    appendChild();
+    cloneNode();
+
+    事件  事件源 事件处理函数
+
+    dom.onclick = function(e){
+        e = e || window.event;
+        e.clientX  e.clientY
+        e.pageX
+
+        e.target || e.srcElement  //事件源
+        this;
+        e.currentTarget
+
+        e.keyCode || e.which
+
+        e.stopPropagation();
+        e.cancelBubble = true;
+
+        e.preventDefault();
+        e.returnValue = false;
+
+        return false;
+
+    }
+
+    this指向  setInterVal   fn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
