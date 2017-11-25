@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li class="aa">003</li>
+    <li>004
+        <span>fghj</span>
+    </li>
+    <li>005</li>
+</ul>
+<p>a paragraph</p>
+<div id="div1">
+    <ul class="first">
+        <li class="foo">list item 1</li>
+        <li>list item 2</li>
+        <li class="bar">list item 3</li>
+    </ul>
+    <ul class="second">
+        <li class="foo">list item 1</li>
+        <li>list item 2</li>
+        <li class="bar">list item 3</li>
+    </ul>
+
+</div>
+
+<ul>
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li class="third-item">list item 3</li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+</ul>
+
+
+<ul id="one" class="level-1">
+    <li class="item-i">I</li>
+    <li id="ii" class="item-ii">II
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </li>
+    <li class="item-iii">III</li>
+</ul>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+//    $('#ul1 li').eq(2).css('background','red');
+   /* $('#ul1 li').filter('.aa').css('background','yellow');
+    $('#ul1 li').first()*/
+
+   /* if($('.aa').is('li')){
+        $('.aa').css('background','blue')
+    };*/
+//$('li').slice(2).css('background-color', 'red');
+//    $('li').not('.aa').css('background','blue')
+//$('li').slice(2, 4).css('background-color', 'red');
+//$('li').add('p').css('background-color', 'red').height(300);
+//    $('#ul1').contents().css('background-color', 'red');
+    /*$('li').each(function(index){
+
+        $(this).attr('class',Math.random());
+    });*/
+
+//    $('#ul1').css('background')
+//    $('#div1').find('.first').find('.foo').css('background','red').end().end().css('background','yellow');
+/*
+$('li.third-item').nextAll().addBack()
+        .css('background-color', 'red');
+*/
+
+//    $('.item-a').closest('.level-1').css('background','red');
+$('ul.level-2').children().css('background-color', 'red');
+</script>
+
+</body>
+</html>

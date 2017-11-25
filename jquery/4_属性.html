@@ -31,7 +31,7 @@
     </ul>
     <div class="cc"></div>
     <input type="checkbox"/>
-    <input type="text" value="1111"/>
+    <input type="text" id="ipt1" value="1111"/>
     <button id="btn">click</button>
     <script src="jquery-1.12.4.js"></script>
     <script>
@@ -70,26 +70,30 @@
 //                $('.cc')
 //       $('.aa').wrap($('.cc'));
 
-//        $('#div1').css('background','yellow').height(800).width(800);
+       /* $('#div1').css('background','yellow').height(800).width(800);
 
-//        $('#div1').append('<p>fghgfghjhg</p>').height(800).width(800);
+        $('#div1').append('<p>fghgfghjhg</p>').height(800).width(800);
 
-       /*$('<p>fghgfghjhg</p>').appendTo('#div1').height(800).width(800);*/
+     $('<p>fghgfghjhg</p>').appendTo('#div1').height(800).width(800);*/
 
 //       $('#div1').html('hhhhh<p>00000</p>');
-//        $('#div1').text('hhhhh<p>00000</p>');
+        $('#div1').text('hhhhh<p>00000</p>');
 
-        var a = $('#div1').detach();
+       /* var a = $('#div1').detach();
 
-        $('#btn').click(function(){
-            $('#div2').before(a);
-        });
-
-
+         $('#btn').click(function(){
+         $('#div2').before(a);
+         });
 
 
+         $('#div1').attr('class','ccc')
 
 
+
+         $('#ipt1').val('sdfghjk')
+         $('#div1').addClass('bb');*/
+
+        console.log($('#div1').offset().top);
 
 
     </script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+   <!-- <form>
+        <input class="target" type="text" value="Field 1" />
+        <select class="target">
+            <option value="option1" selected="selected">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>
+    </form>
+    <div id="other">
+        Trigger the handler
+    </div>-->
+
+    <form>
+        <input id="target" type="text" value="Hello there" />
+    </form>
+    <div id="other">
+        Trigger the handler
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      /*
+        $('#div1').on('mouseover',function(){
+            console.log('div1');
+        });
+        $('#div2').on('mouseover',function(){
+            console.log('div2');
+        })*//*
+        $('#div1').on('mouseenter',function(){
+            console.log('div1');
+        });
+        $('#div2').on('mouseenter',function(){
+            console.log('div2');
+        });
+
+        $('.target').on('change',function(){
+            console.log('哈哈哈');
+        })*/
+
+        $('#target').on('select',function(){
+            console.log(111);
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

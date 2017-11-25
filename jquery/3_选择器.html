@@ -6,10 +6,11 @@
 </head>
 <body>
     <p>fghjl;lkjhg</p>
-    <ul>
-        <li>yyy</li>
-    </ul>
     <ul id="ul1">
+        <li class="xxx">yyy</li>
+        <li class="vvv">yyy</li>
+    </ul>
+    <ul id="ul2">
         <li>001</li>
         <li id="li1" class="aa bb cc">002</li>
         <li class="bbaa">
@@ -58,10 +59,29 @@
 //$('#ul1 li:contains("00")').css('background','yellow');
 //$('#ul1 li:has(".aa")').css('background','yellow');
 
-    $('[type="checkbox"]:checked').attr('class','aa');
+//    $('[type="checkbox"]:checked').attr('class','aa');
 
 //    $('input')
 //    $(':input')
+
+
+
+
+//    $('#li1 ~ li').css('background','red');
+//    $('li[class="bbaa"]').css('background','yellow');
+
+//    $('#ul1 li:first-child')
+//    $('#ul1:first-child').css('backgound','red');
+
+//    $('#ul2 li:nth-child(3)').css('background','red');
+   /* $('.xxx:only-child').css('background','red');
+    $('#ul2 li:eq(4)')*/
+//    $('#ul2 li:even').css('background','red');
+//    $('#ul2 li:not(.aa)').css('background','red');
+
+    $('#ul2:has(".ppppppp")').css('background','red');
+    $(':input')
+    $('input')
 </script>
 </body>
 </html>

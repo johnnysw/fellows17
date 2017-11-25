@@ -5,16 +5,29 @@
     <title></title>
 </head>
 <body>
-<div id="div1">111</div>
+<div id="div1" class="aa">111</div>
 <script src="jquery-1.12.4.js"></script>
 <script>
-    console.log($('#div1')[0]);
-    console.log($('#div1').get(0));
-    var oDiv = document.getElementById('div1');
+//    $('#div1')
+
+    console.log($('#div1'));
+
+    var $div = $('#div1');
+    console.log($div.get(0));
+console.log($div[0]);
+var oDiv = document.getElementById('div1');
+//$(oDiv).css('bajk')
+
+
+
+
+//    $('#div1').css('background','red');
+//    console.log(document.getElementById('div1'));
+    /*var oDiv = document.getElementById('div1');
 
     console.log($(oDiv));
 
-    var $div = $('#div1');
+    var $div = $('#div1');*/
 
 
 

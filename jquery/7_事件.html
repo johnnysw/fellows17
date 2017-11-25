@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body style="width:2000px;">
+    <div id="div1">
+        111
+    </div>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+    </ul>
+    <button>click</button>
+    <input type="text" value="请输入"/>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        /*$('button').on('click',function(){
+            $('ul').append('<li>'+Math.random()+'</li>');
+        });
+        /!*$('li').on('click',function(){
+           console.log($(this).html()) ;
+        });*!/
+        //事件委托
+        $('ul').on('click','li',function(){
+            console.log($(this).html());
+        })*/
+       /* var fn = function(){
+            console.log('cfghjk');
+        }
+
+        $('#div1').one('click',fn);
+
+//        $('#div1').off('click',fn);
+        
+        $('input').on('focus',function(){
+            console.log($(this).val());
+        });
+        $('button').on('click',function(eee){
+            eee.target
+//            $('input').trigger('focus');
+            $('input').triggerHandler('focus');
+        });*/
+        $('#div1').on('click',function(e){
+            console.log(e.pageX);
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
