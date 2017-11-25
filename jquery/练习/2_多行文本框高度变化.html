@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * { margin:0; padding:0;font:normal 12px/17px Arial; }
+        .msg {width:300px; margin:100px; }
+        .msg_caption { width:100%; overflow:hidden; margin-bottom:1px;}
+        .msg_caption span { display:block; float:left; margin:0 2px; padding:4px 10px; background:#898989; cursor:pointer;color:white; }
+        .msg textarea{ width:300px; height:80px;height:100px;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div class="msg">
+    <div class="msg_caption">
+        <span class="bigger" >放大</span>
+        <span class="smaller" >缩小</span>
+    </div>
+    <div>
+        <textarea id="comment" rows="8" cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+
+<script>
+    var $comment = $('#comment');
+    $('.bigger').on('click',function(){
+        if($comment.height() < 500 && !$comment.is(':animated')){
+            $('#comment').animate({
+                height:'+=50'
+            });
+        }
+    });
+
+    //scrollTop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

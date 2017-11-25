@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{
+            outline: none;
+        }
+
+        .selected{
+            background: #0ff00f;
+            border:1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>个人基本信息</legend>
+    <div>
+        <label for="username">名称：</label>
+        <input type="text" id="username" value="名称"/>
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password" id="password" value="密码"/>
+    </div>
+    <label>详细信息</label>
+    <textarea>fghjkjhgvhj
+    </textarea>
+
+</fieldset>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $(':input').on('focus',function(){
+        $(this).addClass('selected');
+        if(this.value == this.defaultValue){
+            this.value = '';
+        }
+    }).on('blur',function(){
+        $(this).removeClass('selected');
+        if(this.value == ''){
+            this.value = this.defaultValue;
+        }
+    });
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
