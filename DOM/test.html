@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aa{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        .bb{
+            border:2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="aa">
+        sgfd
+    </div>
+    <script>
+        var oDiv = document.getElementsByClassName('aa')[0];
+        var flag = false;//false 没有bb
+        oDiv.onclick = function(){
+            if(flag){
+                this.className = 'aa';
+            }else{
+                this.className = 'aa bb';
+            }
+            flag = !flag;
+        }
+    </script>
+
+</body>
+</html>
