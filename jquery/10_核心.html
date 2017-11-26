@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li class="aa">003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+
+
+    console.log($('.aa').index());
+
+    console.log($('.aa').index('li'));
+    $('li').length
+
+
+
+
+
+   /* $.each($('li'),function(index,elem){
+
+    });
+
+    $('li').each(function(index,elem){
+
+    });
+
+    var obj1 = {
+        name:'zhangsan'
+    };
+    var obj2 = {
+        name:'lisi',
+        age:20
+    }
+    var obj3 = {
+        name:'wangwu',
+        school:'heida'
+    }
+    $.extend(obj1,obj2,obj3);
+
+    console.log(obj1);
+
+    $.trim('    aaaa   ');*/
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="toggle">toggle</button>
+<button id="animate">animate</button>
+<button id="stop">stop</button>
+    <div id="div1">
+        111
+    </div>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('#hide').on('click',function(){
+            $('#div1').hide(2000);
+        });
+        $('#show').on('click',function(){
+
+            if($('#div1').is(':animated')){
+                $('#div1').stop().show(2000);
+            }
+        });
+
+
+
+
+
+
+
+        $('#toggle').on('click',function(){
+            $('#div1').toggle(2000);
+        });
+        $('#animate').on('click',function(){
+            $('#div1').animate({
+                width:800
+
+            },1000);
+            $('#div1').animate({
+                height:500
+
+            },1000);
+
+            /*$('#div1').animate({
+                width:800,
+                height:500
+            },1000,'linear',function(){
+                alert(11);
+            });*/
+        });
+        $('#stop').on('click',function(){
+//            $('#div1').stop(true,true);
+
+            $('#div1').slideUp();
+
+        });
+
+//        jQuery()
+        $()
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
