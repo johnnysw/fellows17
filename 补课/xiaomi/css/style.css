@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*nav开始*/
+
+#nav{
+    background: #333;
+    height: 40px;
+}
+.nav-box{
+    width: 1226px;
+    margin: 0 auto;
+}
+.menu{
+    float: left;
+}
+.menu li{
+    float: left;
+    padding:0 10px;
+    position: relative;
+}
+.menu a{
+    color:#b0b0b0;
+    font-size:12px;
+    line-height: 40px;
+}
+.menu span{
+    /*float: right;*/
+    color:#424242;
+    position: absolute;
+    right: 0;
+    top:8px;
+}
+.info{
+    float: right;
+}
+.info li{
+    float: left;
+}
+/*块级元素  不设置宽度 float  宽度就是内容撑的*/
+
+
+.info .cart{
+    width: 120px;
+    background: #424242;
+    color: #b0b0b0;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+}
+/*nav结束*/
+
+#div1{
+    width: 980px;
+    background: #ff0000;
+    height: 50px;
+    margin:0 auto;/*块元素在父元素中水平居中*/
+}
