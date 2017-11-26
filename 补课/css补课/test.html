@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        #div1{ /*id选择器*/
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #999;
+        }
+        li{  /*元素选择器*/
+            background: #0000ff;
+        }
+        p{
+            background: #cccccc;
+        }
+        .aa{ /*类选择器*/
+            background: pink;
+        }
+       /* p{
+            color: #0ff00f;
+        }*/
+        #div1 p{  /*后代选择器*/
+            color:#2196f3 ;
+        }
+        #div1>p{  /*子代选择器*/
+            color: #ff0000;
+
+        }
+
+        /*#div1{
+            background: purple;
+        }
+        .aa{
+            background: purple;
+        }*/
+
+        #div1,.aa{ /*群组选择器*/
+            background: purple;
+        }
+    /*    a{
+            color: #f00;
+        }*/
+     /*   a:hover{  /!*伪类选择器*!/
+            color: #ff00ff;
+        }*/
+
+
+        a:link {color: #FF0000}		/* 未访问的链接 */
+        a:visited {color: #00FF00}	/* 已访问的链接 */
+        a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+        a:active {color: #0000FF}
+
+
+
+
+
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>-->
+</head>
+<body>
+    <div id="div1" style="width:100px;">
+        1111111
+        <p>qqqqqqqq</p>
+        <div>
+            <p>xxxxxxxx</p>
+        </div>
+    </div>
+    <div id="div2">111</div>
+    <p>pppppppp</p>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li class="aa">003</li>
+        <li class="aa">004</li>
+        <li>005</li>
+    </ul>
+    <a href="#">aaaaaaa</a>
+
+
+
+
+</body>
+</html>
