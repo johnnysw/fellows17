@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        span.star{
+            color: #ff0000;
+        }
+        .on-error{
+            background: #FFE0E9 url("img/reg3.gif") 0 center no-repeat ;
+            font-size: 12px;
+            padding-left:30px;
+            padding-right: 5px;
+            display: none;
+        }
+        .on-success{
+            background: #E9FBEB url("img/reg4.gif") 0 center no-repeat ;
+            font-size: 12px;
+            padding-left:30px;
+            padding-right: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="">
+    <div class="int">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" class="required" />
+        <span class="star">*</span>
+        <span class="on-error">
+            请输入至少6位的用户名
+        </span>
+        <span class="on-success">
+            输入正确
+        </span>
+
+    </div>
+    <div class="int">
+        <label for="email">邮箱:</label>
+        <input type="text" id="email" class="required" />
+        <span>*</span>
+        <span class="on-error">
+            请输入邮箱位的用户名
+        </span>
+
+    </div>
+    <div class="int">
+        <label for="personinfo">个人资料:</label>
+        <input type="text" id="personinfo" />
+    </div>
+    <div class="sub">
+        <input type="submit" value="提交" id="send"/>
+        <input type="reset" id="res"/>
+    </div>
+</form>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('.required').on('focus',function(){
+        $(this).siblings('.on-error').show();
+    }).on('keyup',function(){
+        var $this = $(this);
+        if($this.is('#username')){
+            if($this.val().length >= 6){
+                $this.siblings('.on-error').hide().end().siblings('.on-success').show();
+            }
+        }
+        if($this.is('#email')){
+            //验证邮箱
+        }
+
+    });
+
+
+
+</script>
+
+</body>
+</html>

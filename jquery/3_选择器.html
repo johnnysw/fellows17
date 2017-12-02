@@ -10,16 +10,8 @@
         <li class="xxx">yyy</li>
         <li class="vvv">yyy</li>
     </ul>
-    <ul id="ul2">
-        <li>001</li>
-        <li id="li1" class="aa bb cc">002</li>
-        <li class="bbaa">
-            <span class="aa">ggg</span>
-        </li>
-        <li class="bb-ffd">004</li>
-        <li class="bb">005</li>
-    </ul>
-    <input type="text" name="username"/>
+
+    <input type="text" name="username" value="aaaaa"/>
     <input type="checkbox" checked="checked"/>
     <input type="checkbox" checked="checked"/>
     <input type="checkbox" />
@@ -33,10 +25,27 @@
         <option value="">333</option>
     </select>
 
-
+    <ul id="ul2">
+        <li>001</li>
+        <li id="li1" class="aa bb cc">aaa</li>
+        <li class="bbaa">
+            <span class="aa">ggg</span>
+        </li>
+        <li class="bb-ffd">004</li>
+        <li class="bb">005</li>
+    </ul>
 
 <script src="jquery-1.12.4.js"></script>
 <script>
+//    $('#li1 ~ li')
+
+/*$('#ul2 li:first-child').css('background','red');
+$('#ul2').attr('class','aa');*/
+/*.css({
+    width:500,
+    height:400
+})
+console.log($('[name = username]').val('bbbb'));*/
 //    $('.aa').css('background','red');
 //    $('p').css('background','red');
 //    $('#div1');

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1" class="aa">
+    hhhhhhhhh
+</div>
+<ul>
+    <li>001</li>
+    <li class="cc">003</li>
+    <li>004</li>
+</ul>
+<ul>
+    <li>001</li>
+    <li id="li1" class="bb">002</li>
+    <li class="cc">003
+        <span class="aa">qqq</span>
+    </li>
+    <li>004</li>
+</ul>
+
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    console.log($('#li1').index());
+
+    console.log($('#li1').index('li'));
+//    $('li').eq(0).css('background','red');
+//    $('li').filter('.aa').css('background','red');
+//    $('li').has('.aa').css('background','red');
+//     $('li').not('.bb').css('background','red');
+//$('li').slice(1,3).css('background','red');
+
+
+   /* $('li').each(function(index,elem){
+        /!*console.log(index);
+        console.log(elem);
+
+        console.log(this);*!/
+
+        console.log($(this).html());
+    });*/
+
+
+    /*$('li.cc').find('span').css('background','red')
+            .end().css('border','1px solid #000');
+*/
+
+</script>
+
+
+
+</body>
+</html>

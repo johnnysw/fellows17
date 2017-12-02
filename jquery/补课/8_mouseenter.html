@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    1111
+    <div id="div2">
+        2222
+
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+  /*$('#div1').on('mouseover',function(){
+      console.log('div1');
+  });
+  $('#div2').on('mouseover',function(){
+      console.log('div2');
+  });*/
+ /* $('#div1').on('mouseenter',function(){
+      console.log('div1');
+  });
+  $('#div2').on('mouseenter',function(){
+      console.log('div2');
+  });*/
+
+    $('#div1').hover(function(e){
+       // e.pageX
+        //e.target 事件源   e.target || e.srcElement
+        //e.which  键盘码   e.keyCode || e.which
+        //e.currentTarget  == this
+        //e.preventDefault()
+        //e.stopPropagation();
+
+        console.log(111);
+    },function(){
+        console.log(222);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

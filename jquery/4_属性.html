@@ -93,9 +93,27 @@
          $('#ipt1').val('sdfghjk')
          $('#div1').addClass('bb');*/
 
-        console.log($('#div1').offset().top);
+        console.log($('#div1').offset().left);
+        console.log($('#div1').position().left);
+    $('li').filter('.aa')
 
+   /*     $('#div1').is(':animated')
 
+        $('#div1').is('.aa')*/
+
+$('li').not('.aa').css('background','red');
+        $('li').slice(0,3);  //不包括end
+
+        $('li').add('p').css()
+
+        $('li').each(function(index,elem){
+            console.log(index)
+
+            this
+        });
+
+        $('li').first().css('background','red')
+                .height(800).width(800).end().css();
     </script>
 
 </body>
