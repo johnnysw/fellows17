@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-<form method="post" action="">
+<!--<form method="post"  id="form1">-->
     <div class="int">
         <label for="username">用户名:</label>
         <input type="text" id="username" class="required" />
@@ -44,6 +44,9 @@
         <span class="on-error">
             请输入邮箱位的用户名
         </span>
+        <span class="on-success">
+            输入正确
+        </span>
 
     </div>
     <div class="int">
@@ -54,23 +57,47 @@
         <input type="submit" value="提交" id="send"/>
         <input type="reset" id="res"/>
     </div>
-</form>
+<!--</form>-->
 <script src="../jquery-1.12.4.js"></script>
 <script>
     $('.required').on('focus',function(){
-        $(this).siblings('.on-error').show();
+        var $this = $(this);
+        if($this.is('#username')) {
+            if($this.val().length < 6 || $this.val() == ""){
+                $this.siblings('.on-error').show();
+            }
+        }
     }).on('keyup',function(){
         var $this = $(this);
         if($this.is('#username')){
             if($this.val().length >= 6){
                 $this.siblings('.on-error').hide().end().siblings('.on-success').show();
+            }else{
+                $this.siblings('.on-error').show().end().siblings('.on-success').hide();
             }
         }
         if($this.is('#email')){
             //验证邮箱
-        }
 
+            if($this.val().length >= 6){
+                $this.siblings('.on-error').hide().end().siblings('.on-success').show();
+            }else{
+                $this.siblings('.on-error').show().end().siblings('.on-success').hide();
+            }
+        }
     });
+
+    $('#send').on('click',function(){
+        $('.required').trigger('keyup');
+
+        if($('.on-success:visible').length == 2){
+            console.log('成功');
+        }else{
+            console.log('失败');
+        }
+//        console.log($('.on-success:visible').length);
+    });
+
 
 
 
