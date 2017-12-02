@@ -20,20 +20,17 @@
         <tr><th> </th><th>姓名</th><th>性别</th><th>暂住地</th></tr>
     </thead>
     <tbody>
-        <tr><td><input type="radio" name="choice" value=""/></td>
+        <tr><td><input type="checkbox" name="choice" value=""/></td>
             <td>张山</td><td>男</td><td>浙江宁波</td></tr>
-        <tr><td><input type="radio" name="choice" value="" /></td>
+        <tr><td><input type="checkbox" name="choice" value="" /></td>
             <td>李四</td><td>女</td><td>浙江杭州</td></tr>
-        <tr><td><input type="radio" name="choice" value="" checked='checked' /></td>
+        <tr><td><input type="checkbox" name="choice" value="" checked='checked' /></td>
             <td>王五</td><td>男</td><td>湖南长沙</td></tr>
-        <tr><td><input type="radio" name="choice" value="" /></td>
+        <tr><td><input type="checkbox" name="choice" value="" /></td>
             <td>找六</td><td>男</td><td>浙江温州</td></tr>
-        <tr><td><input type="radio" name="choice" value="" /></td>
+        <tr><td><input type="checkbox" name="choice" value="" /></td>
             <td>Rain</td><td>男</td><td>浙江杭州</td></tr>
-        <tr>
-            <td>
-                <input type="radio" name="choice" value="" />
-            </td>
+        <tr><td><input type="checkbox" name="choice" value="" /></td>
             <td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
     </tbody>
 </table>
@@ -41,10 +38,16 @@
 <script>
     $('tbody tr:even').addClass('even');
     $(':checked').parents('tr').addClass('selected');
+
     $('tbody tr').on('click',function(){
-        $(this).addClass('selected').siblings().removeClass('selected');
-        $(this).find(':radio').prop('checked',true);
+        $(this).toggleClass('selected');
+        var oCheckBox = $(this).find(':checkbox').get(0);
+        oCheckBox.checked = !oCheckBox.checked;
     });
+
+
+
+
 
 </script>
 </body>
