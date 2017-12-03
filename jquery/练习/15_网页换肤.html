@@ -101,13 +101,20 @@
     <div>娱乐新闻</div>
 </div>
 <script src="../jquery-1.12.4.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script>
+    var $skin = $.cookie('mySkin') || 'skin_0';
+
     $('#skin-btn li').on('click',function(){
         $(this).addClass('selected').siblings().removeClass('selected');
-        var $skin = $(this).attr('id');
+        $skin = $(this).attr('id');
         $('#content').attr('class',$skin);
+        $.cookie('mySkin',$skin,{expires:7});
     });
-    $('#skin-btn li').eq(2).trigger('click');
+
+    $('#'+$skin).trigger('click');
+
+    //$.cookie('name','zhangsan',{expires:10});
 
 
 

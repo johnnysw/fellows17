@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /* var date = new Date();
+
+    date.setDate(10);
+
+
+    document.cookie = 'name=zhangsan; expires='+date;
+    document.cookie = 'skin=skin_0';
+
+    console.log(document.cookie);*/
+    function setCookie(key, value, expires){
+        var str = key +"="+value+';';
+        if(expires){
+            var date = new Date();
+            date.setDate(date.getDate()+expires);
+            str += 'expires='+date;
+        }
+        document.cookie = str;
+    }
+    setCookie('skin','skin_1',30);
+    function getCookie(key){
+        //'name=zhangsan; skin=skin_1; MyCssSkin=skin_5'
+        var str = document.cookie;
+        var arr = str.split('; ');
+        // ['name=zhangsan','skin=skin_1','MyCssSkin=skin_5']
+        for(var i=0; i<arr.length; i++){
+            var arr1 = arr[i].split('='); //['name','zhangsan']
+            if(arr1[0] == key){
+                return arr1[1];
+            }
+        }
+    }
+
+   console.log(getCookie('skin'));
+
+    function removeCookie(key){
+        setCookie(key,'',-1);
+    }
+    removeCookie('skin');
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
