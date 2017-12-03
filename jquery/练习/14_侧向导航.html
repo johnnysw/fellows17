@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        a{
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .cate_nav{ width:165px; float:left; margin-right:15px;}
+        .cate_nav div.title{border-bottom:2px solid #54a900; padding:0 0 3px}
+        .cate_nav ul li{height:32px;  background:url(images/cate_li.png) no-repeat right 15px; line-height:32px; font-size:10pt; position: relative; }
+
+        .cate_nav ul li.over {position:relative; *height:30px;}
+        .cate_nav ul a{ color:#464646}
+        .cate_nav ul li .leva{ display:block; height:30px; line-height:30px; padding:0 3px; border:1px solid #FFF; border-bottom-color:#ededed; border-right:none;  width:156px}
+        .cate_nav ul li:hover .leva ,.cate_nav ul li.over .leva{ text-decoration:none; background:#FFF; border-color: #40aa53;  z-index:9;	 position:absolute;}
+
+        .cate_nav ul .num{color:#999}
+        .cate_nav ul ul{ display:none; position:absolute; border:1px solid #40aa53; left:162px; top:0; width:200px; background:#FFF; z-index:1; padding:5px 15px ;
+            -moz-box-shadow:0 1px 5px #ccc;
+            -webkit-box-shadow:0 1px 5px #ccc;
+            box-shadow:0 1px 5px #ccc;
+            -moz-transition:all .1s ease;
+            -webkit-transition:all .1s ease;
+            transition:all .1s ease;
+        }
+        .cate_nav ul ul li{ height:25px; line-height:25px; background:none}
+        .cate_nav ul ul a:hover{ background:none; text-decoration:underline; color:#093}
+    </style>
+</head>
+<body>
+
+<div class="cate_nav">
+    <div class="title clearfix">
+        <h4>&nbsp;&nbsp;代码分享»</h4>
+    </div>
+    <div class="block-content">
+        <ul id="cate_menu">
+            <li>
+                <a href="android/2/dev-env-setup" class="leva">HTML<span class="num"> (382)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/15/sdk">基础标签实例</a><span class="num"> (96)</span>
+                    </li>
+                    <li>
+                        <a href="android/15/sdk">链接实例</a><span class="num"> (96)</span>
+                    </li>
+                    <li>
+                        <a href="android/15/sdk">表格实例</a><span class="num"> (96)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/3/android-dev-base" class="leva">CSS<span class="num"> (521)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/19/structure">背景(background)实例</a><span class="num"> (29)</span>
+                    </li>
+                    <li>
+                        <a href="android/20/lifecycle">字体(font)实例</a><span class="num"> (42)</span>
+                    </li>
+                    <li>
+                        <a href="android/117/examples">边框(border)实例</a><span class="num"> (4)</span>
+                    </li>
+                    <li>
+                        <a href="android/85/resource">外边距 (margin) 实例</a><span class="num"> (28)</span>
+                    </li>
+                    <li>
+                        <a href="android/65/android-activity">内边距 (padding) 实例</a><span class="num"> (66)</span>
+                    </li>
+                    <li>
+                        <a href="android/63/view">列表实例</a><span class="num"> (38)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/4/android-dev-ui" class="leva">JavaScript<span class="num"> (654)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/26/edittext">String（字符串）对象实例</a><span class="num"> (11)</span>
+                    </li>
+                    <li>
+                        <a href="android/30/button">Date（日期）对象实例</a><span class="num"> (16)</span>
+                    </li>
+                    <li>
+                        <a href="android/25/listview">Boolean（布尔）对象实例</a><span class="num"> (87)</span>
+                    </li>
+                    <li>
+                        <a href="android/203/checkbox">Array（数组）实例</a><span class="num"> (5)</span>
+                    </li>
+                    <li>
+                        <a href="android/24/textview">Math（算数）对象实例</a><span class="num"> (23)</span>
+                    </li>
+                    <li>
+                        <a href="/community/code/html_dom.jsp">HTML DOM 实例</a><span class="num"> (56)</span>
+                    </li>
+                    <li>
+                        <a href="android/204/surfaceview">BOM 实例</a><span class="num"> (18)</span>
+                    </li>
+                    <li>
+                        <a href="android/31/menu">XML DOM 实例</a><span class="num"> (30)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/5/android-dev-storage" class="leva">jQuery<span class="num"> (92)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/36/files-sdcard">HTML 操作 实例</a><span class="num"> (29)</span>
+                    </li>
+                    <li>
+                        <a href="android/38/sqlite">CSS 操作 实例</a><span class="num"> (33)</span>
+                    </li>
+                    <li>
+                        <a href="android/40/preferences">动画 操作 实例</a><span class="num"> (16)</span>
+                    </li>
+                    <li>
+                        <a href="android/39/content-provider">Ajax 操作 实例</a><span class="num"> (14)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/6/android-dev-netio" class="leva">XML<span class="num"> (151)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/41/http">......</a><span class="num"> (37)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/7/android-dev-media" class="leva">Java<span class="num"> (89)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/45/audio">......</a><span class="num"> (20)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/8/android-dev-graphics" class="leva">JSP&amp;Servlet<span class="num"> (137)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/61/opengl">......</a><span class="num"> (15)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/131/android-advanced" class="leva">JDBC<span class="num"> (306)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/140/uncomplier">......</a><span class="num"> (13)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/11/android-dev-games" class="leva">Struts<span class="num"> (44)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/121/game-engine">......</a><span class="num"> (8)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/9/android-dev-specials" class="leva">Spring<span class="num"> (128)</span></a>
+                <ul style="display: none; ">
+                    <li>
+                        <a href="android/51/gps">......</a><span class="num"> (29)</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a href="android/68/android-dev-3rdparty" class="leva">Hibernate<span class="num"> (40)</span></a>
+                <ul style="display: none; ">
+                    <li>
+                        <a href="android/69/weibo">......</a><span class="num"> (12)</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="android/77/android-dev-others" class="leva">其他<span class="num"> (435)</span></a>
+                <ul>
+                    <li>
+                        <a href="android/13/android-dev-usage">......</a><span class="num"> (82)</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('#cate_menu>li').hover(function(){
+        $(this).find('ul').show();
+    },function(){
+        $(this).find('ul').hide();
+    });
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

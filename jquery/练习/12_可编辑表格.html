@@ -67,7 +67,15 @@
         var $val = $(this).html();
         $(this).html('<input type="text" value="'+$val+'"/>')
                 .find('input').trigger('select');
-    })
+    });
+    //事件委托
+    $('.editable').on('keyup','input',function(e){
+        if(e.which == 13){
+            var $text = $(this).val();
+            $(this).parent().html($text);
+        }
+
+    });
 
 
 

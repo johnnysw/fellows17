@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{ margin:0; padding:0;}
+        body { font:12px/19px Arial, Helvetica, sans-serif; color:#666;}
+        .tab { width:240px;margin:50px;}
+        .tab_menu { clear:both;}
+        .tab_menu li { float:left; text-align:center; cursor:pointer; list-style:none; padding:1px 6px; margin-right:4px; background:#F1F1F1; border:1px solid #898989; border-bottom:none;}
+        .tab_menu li.hover { background:#DFDFDF;}
+        .tab_menu li.selected { color:#FFF; background:#6D84B4;}
+        .tab_box { clear:both; border:1px solid #898989; height:100px;}
+        .tab_box div{display:none}
+        .tab_box .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tab">
+    <div class="tab_menu">
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+        </ul>
+        <ul>
+            <li class="selected">时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+    </div>
+    <div class="tab_box">
+        <div class="selected">时事</div>
+        <div>体育</div>
+        <div>娱乐</div>
+    </div>
+</div>
+
+<script src="../jquery-1.12.4.js"></script>
+<script>
+
+//    console.log($('.selected').index('li'));
+    $('.tab_menu li').on('click',function(){
+        $(this).addClass('selected').siblings().removeClass('selected');
+        var $idx = $(this).index();
+        $('.tab_box div').eq($idx).addClass('selected').siblings().removeClass('selected');
+    });
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
