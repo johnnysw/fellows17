@@ -13,11 +13,11 @@
     <li>04</li>
 </ul>
 <script>
-    //$('#div1')
+    //$('#div1').on.css
     //$('.aa')
     function $(selector,context){
         return new Jquery(selector,context);
-    }
+    };
     function Jquery(selector,context){
         this.element = [];
         if(typeof selector == 'string'){
@@ -29,14 +29,25 @@
         }else if(typeof selector == 'function'){
             addEvent(document,'DOMContentLoaded',selector,false);
         }
-    }
+    };
     Jquery.prototype.on = function(type,fn){
         for(var i=0; i<this.element.length; i++){
             addEvent(this.element[i],type,fn,false);
         }
+        return this;
+    };
+    Jquery.prototype.css = function(str1,str2){
+        for(var i=0; i<this.element.length; i++){
+            if(typeof str1 == 'string' && typeof str2 == 'string'){
+                this.element[i].style[str1] = str2;
+            }else if(typeof str1 == 'object' && typeof str2 == 'undefined'){
+                for(key in str1){
+                    this.element[i].style[key] = str1[key];
+                }
+            }
+        }
+        return this;
     }
-
-
     /* console.log(typeof aa);
      console.log($('#div1'));
      console.log($('.aa'));*/
@@ -47,14 +58,14 @@
         console.log(222);
     });*/
 
-
     $('#div1').on('click',function(){
         console.log(111)
-    });
-
-
-
-
+    }).css('backgroud','blue');
+//    $('.aa').css('background','red');
+   /* $('.aa').css({
+        background:'green',
+        color:'#f00'
+    });*/
 
     function getEleByClassName(clsName,context){
         var result = [];
@@ -81,11 +92,6 @@
             //绑定事件 this指向window
         }
     }
-
-
-
-
-
     //DOMContentLoaded
 
 
