@@ -33,7 +33,7 @@
     var oDiv1 = document.getElementById('div1');
     var oDiv2 = document.getElementById('div2');
     var oDiv3 = document.getElementById('div3');
-    oDiv1.onclick = function(e){
+   /* oDiv1.onclick = function(e){
         e = e || window.event;
         console.log('div1');
 
@@ -51,9 +51,18 @@
         console.log('div3');
         e.stopPropagation();//阻止事件冒泡  标准浏览器
         e.cancelBubble = true; //ie浏览器
-    }
+    }*/
     //事件冒泡 从里往外  //事件捕获 从外往里   先执行捕获 在执行冒泡
-/*
+
+    oDiv1.addEventListener('click',function(){
+        console.log('div1 冒泡');
+    },false);
+    oDiv2.addEventListener('click',function(){
+        console.log('div2 冒泡');
+    },false);
+    oDiv3.addEventListener('click',function(){
+        console.log('div3 冒泡');
+    },false);
 
     oDiv1.addEventListener('click',function(){
         console.log('div1 捕获');
@@ -65,16 +74,7 @@
         console.log('div3 捕获');
     },true);
 
-    oDiv1.addEventListener('click',function(){
-        console.log('div1 冒泡');
-    },false);
-    oDiv2.addEventListener('click',function(){
-        console.log('div2 冒泡');
-    },false);
-    oDiv3.addEventListener('click',function(){
-        console.log('div3 冒泡');
-    },false);
-*/
+
 
 
 
