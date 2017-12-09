@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">ghjk</div>
+<ul>
+    <li>01</li>
+    <li class="aa">02</li>
+    <li class="aa">03</li>
+    <li>04</li>
+</ul>
+<script>
+    //$('#div1')
+    //$('.aa')
+    function $(selector,context){
+        return new Jquery(selector,context);
+    }
+    function Jquery(selector,context){
+        this.element = [];
+        if(typeof selector == 'string'){
+            if(selector.charAt(0) == '#' ){
+                this.element.push(document.getElementById(selector.substring(1)));
+            }else if(selector.charAt(0) == '.'){
+                this.element = getEleByClassName(selector.substring(1),context);
+            }
+        }else if(typeof selector == 'function'){
+            addEvent(document,'DOMContentLoaded',selector,false);
+        }
+    }
+    Jquery.prototype.on = function(type,fn){
+        for(var i=0; i<this.element.length; i++){
+            addEvent(this.element[i],type,fn,false);
+        }
+    }
+
+
+    /* console.log(typeof aa);
+     console.log($('#div1'));
+     console.log($('.aa'));*/
+ /*   $(function(){
+        console.log(111);
+    });
+    $(function(){
+        console.log(222);
+    });*/
+
+
+    $('#div1').on('click',function(){
+        console.log(111)
+    });
+
+
+
+
+
+    function getEleByClassName(clsName,context){
+        var result = [];
+        var parentEle = context || document;
+        var allELe = parentEle.getElementsByTagName('*');
+        for(var i=0; i<allELe.length; i++){
+            var arr = allELe[i].className.split(' '); //'aa bb' ==> ['aa','bb']; ['aabb']
+            for(var j=0; j<arr.length; j++){
+                if(arr[j] == clsName){
+                    result.push(allELe[i]);
+                }
+            }
+        }
+        return result;
+    }
+
+    function addEvent(elem,type,fn,flag){
+        if(elem.addEventListener){//标准浏览器
+            elem.addEventListener(type,fn,flag);
+        }else{//ie浏览器
+            elem.attachEvent('on'+type, function(){
+                fn.call(elem);
+            });
+            //绑定事件 this指向window
+        }
+    }
+
+
+
+
+
+    //DOMContentLoaded
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

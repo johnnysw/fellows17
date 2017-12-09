@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /* var obj = new Object();
+    obj.name = 'zhangs';
+    obj.age = 20;
+
+    var obj2 = {//对象直接量
+    name:'lisi',
+    age:20
+    }
+
+    var person1 = {
+    name:'lisi',
+    age:20
+    }
+    var person2 = person1;*/
+
+    //类 具有相同属性和方法的对象的集合
+
+    function Person(n,age){//构造函数  this对当前对象的引用
+        this.name = n;
+        this.age = age;
+    }
+    //原型
+    Person.prototype.eat = function(){  //原型对象
+        console.log(this.name +" is eating....");
+    }
+    var p1 = new Person('zhangs',20);
+    var p2 = new Person('lisi',10);
+
+    console.log(p1.name);
+    console.log(p2.name);
+
+    p1.eat();
+    p2.eat();
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
