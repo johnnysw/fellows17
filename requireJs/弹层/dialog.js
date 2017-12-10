@@ -8,7 +8,11 @@ requirejs.config({
 });
 define(['jquery'],function($){
     return {
-        open:function(){
+        open:function(arg){
+            this.defaultValue = {
+                width:300,
+                height:200
+            }
             var html = '<div class="mask">'
                             +'<div class="container">'
                                 +'<div class="title">'
@@ -18,7 +22,18 @@ define(['jquery'],function($){
                                 +'<div class="content">fghjhgfghg</div>'
                             +'</div>'
                         +'</div>';
+
             $('body').append(html);
+            var value = $.extend(this.defaultValue,arg);
+            $('.container').css({
+                width:value.width,
+                height:value.height,
+                marginLeft:-value.width/2,
+                marginTop:-value.height/2
+            });
+            $('.title h2').html(arg.title);
+            $('.content').html(arg.content);
+
 
 
         },

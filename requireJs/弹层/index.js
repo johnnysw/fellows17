@@ -6,9 +6,17 @@ requirejs.config({
       jquery: 'jquery-1.12.4'
    }
 });
-require(['jquery','dialog'],function($,dialog){
+require(['jquery','dialog1'],function($,dialog){
 
    $('#btn').on('click',function(){
-      dialog.open();
+      dialog.open({
+         width:800,
+         title:'bighj',
+         content:'content.html'
+      });
+
+   });
+   $('body').on('click','#cancel',function(){
+      dialog.close();
    });
 });
