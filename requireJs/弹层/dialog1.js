@@ -7,7 +7,6 @@ requirejs.config({
     }
 });
 define(['jquery'],function($){
-
     function Dialog(arg){
         var _this = this;
 
@@ -38,7 +37,6 @@ define(['jquery'],function($){
         this.$content.load(this.defaultValue.content);
         $('body').append(this.$mask);
     };
-
     Dialog.prototype.close = function(){
         this.$mask.remove();
     }
