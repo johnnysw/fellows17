@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+
+
+    var obj = {
+        name:'zhangsan'
+    };
+
+    function aa(name,age){
+        console.log(this,name,age);
+    }
+//    aa.call(obj,'aaa',12);
+//    aa.apply(obj,['aaa',12]);
+    aa.bind(obj,'aaa',12)();
+
+
+
+    //call apply bind
+    //a.call()
+</script>
+
+</body>
+</html>

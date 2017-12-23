@@ -10,9 +10,9 @@ require(['add'],function(add1){
 
 require(['sortArray'],function(sortArray){
     var arr = [1,3,5,90,13,2];
-    var obj = {
+    /*var obj = {
         name:'hjkjhhj'
-    }
+    }*/
 
     console.log(sortArray(arr));
 });

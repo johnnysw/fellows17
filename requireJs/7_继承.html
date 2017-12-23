@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //类 具有相同属性方法的对象的集合
+
+    function A(name,age){
+        this.name = name;
+        this.age = age;
+    };
+    //prototype构造函数的属性  指向原型对象
+    A.prototype.say = function(){
+        console.log(this.name +" is saying.....");
+    };
+    function B(name,age){//this ==>oB
+        A.call(this,name,age);//继承A类下的属性
+    };
+    B.prototype = new A();//new A()实例化一个A对象
+    //继承A下的方法
+
+    var oB = new B('b',12);
+    oB.say();
+
+//    console.log(oB);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

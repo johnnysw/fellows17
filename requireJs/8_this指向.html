@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    this指向
+
+    function aa(){
+//        this==>window
+    }
+    setInterval(function(){//setTimeout
+       // this==>window
+    })
+
+//    oBtn.onclick = function(){
+////        this==>oBtn
+//    }
+
+    function Person(name){ //构造函数中 this指向实例化对象
+        this.name = name;
+    }
+    var person1 = new Person('zhangsan');
+    var person2 = new Person('lisi');
+
+    var obj = {
+        name:'zhangsan',
+        say:function(){
+            alert(this.name);
+        }
+    }
+    obj.say();
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

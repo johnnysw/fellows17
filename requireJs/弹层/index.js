@@ -9,7 +9,6 @@ requirejs.config({
 require(['jquery','dialog1'],function($,Dialog){
 
    $('#btn').on('click',function(){
-
       var dialog1 = new Dialog({
          width:800,
          title:'bighj',

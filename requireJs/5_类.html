@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //类 具有相同属性方法的对象的集合
+
+    function Cat(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Cat.prototype.eat = function(){
+        console.log(this.name +"  is eating.....");
+    };
+    Cat.prototype.father = {//属性引用数据类型写在原型下 有问题 共用一个属性
+        name:'Tom'
+    };
+    var cat1 = new Cat('xix',12);
+    var cat2 = new Cat('heh',10);
+    cat2.father.name = 'aa';
+    console.log(cat1.father);
+    console.log(cat2.father);
+//    cat2.eat();
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

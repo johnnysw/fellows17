@@ -3,7 +3,7 @@
  */
 define(['isArray'],function(isArray){
     function sortArray(arr){
-        if(isArray(arr)){
+        if(isArray(arr)){//判断是否是数组
             return arr.sort(function(a,b){
                 return a-b;
             });
