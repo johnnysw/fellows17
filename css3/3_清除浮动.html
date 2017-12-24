@@ -29,8 +29,13 @@
        /* #div4{
             clear: both;
         }*/
-        .clearfix{
-
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear:  both;
+        }
+        input::placeholder{
+            color: #ff0000;
         }
     </style>
 </head>
@@ -38,9 +43,9 @@
     <div id="div3" class="clearfix">
         <div id="div1">111</div>
         <div id="div2">2222</div>
-
     </div>
     <h3>dfghjk'l;jghdfgjl;k'lh</h3>
+    <input type="text" placeholder="请输入用户名"/>
 
 </body>
 </html>
