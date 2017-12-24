@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        /*li[class="aa"]{
+            background: #ff0000;
+        }*/
+        /*li[class~="aa"]{
+            background: #ff0000;
+        }*/
+        /*li[class*="a"]{
+            background: #ff0000;
+        }*/
+        /*#ul2 li[class|='aa']{
+            background: #ff0000;
+        }*/
+        /*li:not(.aa){
+            background: #ffff00;
+        }
+        ul:first-child{
+            background: #0000ff;
+        }*/
+       /* ul:only-child{
+            background: #0000ff;
+        }*/
+       /* #ul2 li:nth-child(1){
+            background: #eeeeee;
+        }
+*/
+       /* ul:first-child{
+            background: #0000ff;
+        }*/
+        ul:first-of-type{
+            background: #0000ff;
+        }
+        /*p::first-letter{
+            color: #f00;
+        }*/
+        p::first-line{
+            color: #f00;
+        }
+        #ul2 li{
+            width: 100px;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            background: #cccccc;
+            text-align: center;
+            position: relative;
+        }
+        #ul2 li::before{
+            content: '';
+            background: #000;
+            width: 1px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top:15px;
+        }
+    </style>
+</head>
+<body>
+    <!--#id
+    .class
+    p
+    .aa .bb
+    .aa>.bb
+    .a,.b
+    :hover
+    .aa+.bb
+    .aa~.bb-->
+    <div></div>
+    <ul>
+        <li class="aa bb">014</li>
+        <li class="cc aa bb">024</li>
+        <li class="bbcca">034</li>
+        <li>044</li>
+    </ul>
+    <ul id="ul2">
+        <li class="aa">014</li>
+        <li class="cc aa bb">024</li>
+        <li class="aaccc">034</li>
+        <li class="aa-bb">044</li>
+    </ul>
+    <button>click</button>
+    <button disabled>click</button>
+    <p>倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能倒挂金钩是个苏菲我会更不能</p>
+
+
+
+</body>
+</html>
