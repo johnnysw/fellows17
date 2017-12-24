@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*-webkit-box-ordinal-group:2;子元素的
+         -webkit-box-direction: reverse; 父元素
+         先执行子元素  再执行父元素
+         */
+        #div1{
+            background: #eeeeee;
+            display: -webkit-box;
+            /*-webkit-box-orient:vertical;*/
+            -webkit-box-direction: reverse;
+            /*-webkit-box-align: baseline;*/
+            height: 500px;
+        }
+        #div2{
+            height: 100px;
+            background: #ff0000;
+            /*width: 200px;*/
+            -webkit-box-flex: 1;
+            /*margin-right: 50px;*/
+            -webkit-box-ordinal-group:2;
+        }
+        #div3{
+            height: 200px;
+            background: #0f0;
+            -webkit-box-flex:1;
+            -webkit-box-ordinal-group:1;
+        }
+        #div4{
+            height: 300px;
+            background: #00f;
+            -webkit-box-flex:1;
+            -webkit-box-ordinal-group:3;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            1
+            <!--<h1>111111111111</h1>-->
+        </div>
+        <div id="div3">
+            2
+            <!--<h1>DFGHJKLKJc HGHFGHJ KLKJHGH GHJKLKJHGH FGHJKL KJHGHFGHJKLKJHGH</h1>-->
+        </div>
+        <div id="div4">
+            3
+            <!--<h1>111111111111</h1>-->
+        </div>
+    </div>
+
+</body>
+</html>
