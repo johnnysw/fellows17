@@ -1,0 +1,10 @@
+#id
+.class
+p div
+.a,.b
+.a .b
+.a>.b
+:hover
+.a+.b
+.a~.b
+[]
