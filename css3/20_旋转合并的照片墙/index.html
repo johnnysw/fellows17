@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+            background: url("img/bg.jpg") 0 0 repeat;
+            position: relative;
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+            border:5px solid #fff;
+            position: absolute;
+            left:-150px;
+            top:-150px;
+            -webkit-transition: all 1.5s ease;
+        }
+        #container .img span{
+            width: 125px;
+            height: 125px;
+            display: block;
+            background: #ff0000;
+            opacity: 0;
+            -webkit-transition: all 0s ease;
+        }
+        #prev,#next{
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            top:50%;
+            margin-top: -40px;
+            display: none;
+
+
+        }
+        #prev{
+            background: #fff url("img/prev.png") center center no-repeat;
+            left:0;
+            border-radius: 0px 10px 10px 0;
+        }
+        #next{
+            background: #fff url("img/next.png") center center no-repeat;
+            right:0;
+            border-radius: 10px 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <span id="prev"></span>
+    <span id="next"></span>
+    <script>
+        var oContainer = document.getElementById('container');
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var num = 0;
+        var iNow = 0;
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                num++;
+                if(num == 48){
+                    loadSuccess();
+                }
+            }
+            oImg.src="img/"+(i+1)+".jpg";
+        }
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                num++;
+                if(num == 48){
+                    loadSuccess();
+                }
+            }
+            oImg.src="img/thumbs/"+(i+1)+".jpg";
+        }
+
+        var index = 0;
+        function loadSuccess(){
+            for(var i=0;i<4;i++){ //行数
+                for(var j=0; j<6;j++){//列
+                    var oDiv = document.createElement('div');
+                    oDiv.className = 'img';
+                    oDiv.rowCol = {
+                        row:i,
+                        col:j
+                    }
+                    oDiv.style.background = 'url(img/thumbs/'+(index+1)+'.jpg) 0 0 no-repeat';
+                    oDiv.idx = index;
+                    oDiv.innerHTML = "<span></span>";
+                    oDiv.onclick = fn;
+                    oContainer.appendChild(oDiv);
+                    index++;
+                }
+            }
+            //图片之间空隙
+            var spaceX = (oContainer.offsetWidth - 135*6)/7;
+            var spaceY = (oContainer.offsetHeight - 135*4)/5;
+
+            var aDiv = oContainer.getElementsByTagName('div');
+            //循环24个div 设置left  top
+            for(i=0; i<aDiv.length; i++){
+                aDiv[i].style.transitionDelay = (23-i)*100+"ms";
+                aDiv[i].style.left = aDiv[i].rowCol.col*(spaceX+135) + spaceX +"px";
+                aDiv[i].style.top = aDiv[i].rowCol.row*(spaceY+135) + spaceY +"px";
+                // -20   20随机数
+                aDiv[i].style.WebkitTransform = 'rotate('+(Math.random()-0.5)*40+'deg)';
+            }
+
+            var iLeft = (oContainer.offsetWidth - 6*127)/2;
+            var iTop = (oContainer.offsetHeight - 4*127)/2;
+
+            var flag = true;  //true  代表打开状态 false 代表合上状态
+            function fn(){
+                //console.log(this.idx); img/(this.idx+1).jpg
+                if(flag){ //合并
+                    for(var i=0; i<aDiv.length; i++){
+                        var oDiv = aDiv[i];
+                        oDiv.style.transitionDelay = "0ms";
+                        oDiv.style.left = iLeft + 127* oDiv.rowCol.col +"px";
+                        oDiv.style.top = iTop + 127* oDiv.rowCol.row +"px";
+                        oDiv.style.border = '1px solid #fff';
+                        oDiv.style.WebkitTransform = 'rotate(0deg)';
+                        var oSpan = oDiv.getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 1;
+                        var x = -oDiv.rowCol.col *125;
+                        var y = -oDiv.rowCol.row *125;
+                        oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px no-repeat';
+                    }
+                    iNow = this.idx;//记录当前点击div的索引
+
+                    oPrev.style.display = 'block';
+                    oNext.style.display = 'block';
+
+
+                }else{//散开
+                    for(var i=0; i<aDiv.length; i++){
+                        var oDiv = aDiv[i];
+                        oDiv.style.left = oDiv.rowCol.col*(spaceX+135) + spaceX +"px";
+                        oDiv.style.top = oDiv.rowCol.row*(spaceY+135) + spaceY +"px";
+                        oDiv.style.WebkitTransform = 'rotate('+(Math.random()-0.5)*40+'deg)';
+
+                        oDiv.style.border = '5px solid #fff';
+                        var oSpan = oDiv.getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 0;
+                    }
+                    oPrev.style.display = 'none';
+                    oNext.style.display = 'none';
+                }
+                flag = !flag;
+            }
+
+            oPrev.onclick = oNext.onclick = function(){
+                if(this == oPrev){
+                    //上一个按钮
+                    iNow--;
+                    if(iNow == -1){
+                        iNow = aDiv.length-1;
+                    }
+                }else{
+                    iNow++;
+                    if(iNow == aDiv.length){
+                        iNow = 0;
+                    }
+                }
+                var arr = [];
+                for(var i=0; i<aDiv.length; i++){
+                    arr.push(i);
+                }
+
+                arr.sort(function(){
+                    return Math.random()-0.5;
+                });
+
+                console.log(arr);
+
+                /*for(var i=0; i<aDiv.length; i++){
+                    var oSpan =  aDiv[i].getElementsByTagName('span')[0];
+                    var random =  arr[i];
+                    oSpan.style.transitionDelay = random*10+"ms";
+                    oSpan.style.backgroundImage = 'url(img/'+(iNow+1)+'.jpg)';
+                }*/
+
+                var timer = setInterval(function(){
+                    var random = arr.pop();
+                    var oSpan =  aDiv[random].getElementsByTagName('span')[0];
+                    oSpan.style.backgroundImage = 'url(img/'+(iNow+1)+'.jpg)';
+                    if(arr.length == 0){
+                        clearInterval(timer);
+                    }
+                },30);
+
+
+
+
+
+
+
+
+            }
+
+
+
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>
