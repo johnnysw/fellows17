@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+            margin: 100px;
+            -webkit-perspective:800px ;/*视角*/
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*-webkit-transform: rotate(-30deg);*/
+            /*-webkit-transform: translate(-30px);*/
+            /*-webkit-transform: scale(2);*/
+            /*-webkit-transform: skew(30deg);*/
+            /*-webkit-transform: rotateZ(30deg);*/
+            /*-webkit-transform: rotate3D(1,1,0,30deg);*/
+
+            /*-webkit-transform: translateX(30px);*/
+            /*-webkit-transform: translateZ(-30px);*/
+            -webkit-transform:scaleX(0.5);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+
+</body>
+</html>
