@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+            margin:50px auto;
+            border-radius: 50%;
+            position: relative;
+        }
+        #container li{
+            width: 2px;
+            height: 4px;
+            background: #000000;
+            position: absolute;
+            left:50%;
+            margin-left: -1px;
+            top:0;
+            -webkit-transform-origin: 1px 100px;
+        }
+        #container li:nth-child(5n+1){
+            height: 8px;
+        }
+        #hour{
+            width: 6px;
+            height: 35px;
+            background: #000000;
+            position: absolute;
+            left:97px;
+            top:65px;
+            -webkit-transform-origin: 3px 35px;
+        }
+        #minute{
+            width: 4px;
+            height: 45px;
+            background: green;
+            position: absolute;
+            left:98px;
+            top:55px;
+            -webkit-transform-origin: 2px 45px;
+        }
+        #second{
+            width: 2px;
+            height: 55px;
+            background: red;
+            position: absolute;
+            left:99px;
+            top:45px;
+            -webkit-transform-origin: 1px 55px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+        </ul>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+    <script>
+        var oUl = document.getElementsByTagName('ul')[0];
+        var oHour = document.getElementById('hour');
+        var oMinute = document.getElementById('minute');
+        var oSecond = document.getElementById('second');
+
+        var sLi = '';
+        for(var i=0; i<60; i++){
+            sLi += '<li style="-webkit-transform: rotate('+i*6+'deg)"></li>';
+        }
+        oUl.innerHTML = sLi;
+
+        function run(){
+            var date = new Date();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            oHour.style.webkitTransform = 'rotate('+(hour+minute/60)*30+'deg)';
+            oMinute.style.webkitTransform = 'rotate('+(minute+second/60)*6+'deg)';
+            oSecond.style.webkitTransform = 'rotate('+second*6+'deg)';
+        }
+        run();
+        setInterval(function(){
+            run();
+        },1000);
+
+
+
+
+    </script>
+
+</body>
+</html>
