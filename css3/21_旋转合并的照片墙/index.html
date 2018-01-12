@@ -22,7 +22,26 @@
             position: absolute;
             left:-150px;
             top:-150px;
-            -webkit-transition: all 2s ease 1s;
+            -webkit-transition: all 1s ease 1s;
+        }
+        .img span{
+            display: block;
+            width: 125px;
+            height: 125px;
+            background: #ff0000;
+            opacity: 0;
+        }
+        #prev{
+            width: 40px;
+            height: 80px;
+            /*background: #ffffff;*/
+            position: absolute;
+            left:0;
+            top:50%;
+            -webkit-transform: translateY(-50%);
+            border-radius: 0 10px 10px 0;
+            display: none;
+            background:#ffffff url("img/prev.png") no-repeat center center;
         }
 
 
@@ -64,37 +83,88 @@
 
         var oContent = document.getElementById('content');
         function loadSuccess(){
-            /*for(var i=0; i<24; i++){
-
-
-            }*/
-
+            //初始化生成24个div
             var count = 0;
+            var iNow = 0;
             for(var i=1; i<5; i++){//行
                 for(var j=1; j<7; j++){//列
                     var oDiv = document.createElement('div');
                     oDiv.className = 'img';
                     count++;
-                    oDiv.style.background = 'url(img/thumbs/'+count+'.jpg)';
+                    oDiv.style.background = 'url(img/thumbs/'+count+'.jpg) no-repeat';
                     oDiv.pos = {
                         row:i,
                         col:j
                     }
+                    oDiv.index = count;  //从1 - 24
+                    oDiv.innerHTML = "<span></span>";
+                    oDiv.onclick = fn;
                     oContent.append(oDiv);
                 }
             }
             var aDiv = oContent.getElementsByTagName('div');
+            //设置24个div位置
             var iLeft = (document.body.offsetWidth - 135*6)/7;
             var iTop = (document.body.offsetHeight - 135*4)/5;
             for(var i=0; i<24; i++){
                 var oDiv = aDiv[i];
-               /* col 1  iLeft*1       col*ILeft + （col-1）*img
-                col 2  ileft*2 + img
-                col 3  iLeft*3 + img*2*/
+                /* col 1  iLeft*1
+                   col 2  ileft*2 + img宽
+                   col 3  iLeft*3 + img宽*2
+                   col    col*iLeft + （col-1）*img宽
+                   */
+                oDiv.style.webkitTransitionDelay = (23-i)*100+"ms";
                 oDiv.style.left =  oDiv.pos.col*iLeft + (oDiv.pos.col-1) * 135 +'px';
                 oDiv.style.top =  oDiv.pos.row*iTop + (oDiv.pos.row-1) * 135 +'px';
+                // -20   20随机生成
+                oDiv.style.transform = 'rotate('+(Math.random()*40-20)+'deg)';
             }
+            var iL = (document.body.offsetWidth - 127*6)/2;
+            var iT = (document.body.offsetHeight - 127*4)/2;
+            var aSpan = oContent.getElementsByTagName('span');
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
+            var flag = true;//打开
+            function fn(){
+                if(flag){ //合并
+                    for(var i=0; i<aDiv.length; i++){
+                        var oDiv = aDiv[i];
+                        oDiv.style.webkitTransitionDelay = '0ms';
 
+                        oDiv.style.border = '1px solid #fff';
+                        oDiv.style.left = (oDiv.pos.col-1) *127 + iL+"px";
+                        oDiv.style.top = (oDiv.pos.row-1) *127 + iT+"px";
+                        oDiv.style.webkitTransform = 'rotate(0deg)';
+                        aSpan[i].style.opacity = 1;
+                        aSpan[i].style.background = 'url(img/'+this.index+'.jpg) '
+                                +(oDiv.pos.col-1)*-125+'px '+(oDiv.pos.row-1)*-125+'px';
+                    }
+                    oPrev.style.display = 'block';
+                    iNow = this.index;
+
+
+                }else{ //打开
+                    for(var i=0; i<24; i++){
+                        var oDiv = aDiv[i];
+                        oDiv.style.left =  oDiv.pos.col*iLeft + (oDiv.pos.col-1) * 135 +'px';
+                        oDiv.style.top =  oDiv.pos.row*iTop + (oDiv.pos.row-1) * 135 +'px';
+                        // -20   20随机生成
+                        oDiv.style.border = '5px solid #fff';
+                        oDiv.style.transform = 'rotate('+(Math.random()*40-20)+'deg)';
+                        aSpan[i].style.opacity = 0;
+                    }
+                }
+                flag = !flag;
+            }
+            oPrev.onclick = function(){
+                iNow--;
+                if(iNow == 0){
+                    iNow = 24;
+                }
+                for(var i=0; i<aSpan.length; i++){
+                    aSpan[i].style.backgroundImage = 'url(img/'+iNow+'.jpg)';
+                }
+            }
 
 
 
