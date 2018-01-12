@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+            margin:100px auto;
+            -webkit-perspective: 800px;
+        }
+        /*  #div1::after{
+              content: '';
+              height: 1px;
+              display: block;
+              background: #000;
+              /!*-webkit-transform: scale(0.5);*!/
+          }*/
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*-webkit-transform: rotate(30deg);
+            -webkit-transform-origin: 0px 0px;*/
+            /*-webkit-transform: translate(30px);*/
+            /*-webkit-transform: scale(0.6);*/
+            /*-webkit-transform: skew(45deg);*/
+            /*-webkit-transform: rotateX(30deg);*/
+            /*-webkit-transform: rotateZ(30deg);*/
+            /*-webkit-transform: rotateX(80deg) translateZ(100px) ;*/
+            /*-webkit-transform: scaleX(2) ;*/
+
+            /*-webkit-transition: width 2s ease 1s;*/
+
+            -webkit-animation: run 2s ease 1s forwards;
+        }
+        #div2:hover{
+            width:800px;
+        }
+
+        @keyframes run {
+            0%{
+
+            }
+            50%{
+                width: 20px;
+            }
+            100%{
+                width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+
+
+</body>
+</html>

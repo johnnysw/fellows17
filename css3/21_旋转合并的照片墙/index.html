@@ -8,8 +8,21 @@
             margin:0;
             padding: 0;
         }
+        html,body{
+            height: 100%;
+        }
         #container{
-
+            height: 100%;
+            background: url("img/bg.jpg") 0 0 ;
+        }
+        .img{
+            width: 125px;
+            height: 125px;
+            border:5px solid #fff;
+            position: absolute;
+            left:-150px;
+            top:-150px;
+            -webkit-transition: all 2s ease 1s;
         }
 
 
@@ -33,7 +46,7 @@
              oImg.onload = function(){//小图
                  num++;
                  if(num == 48){
-                     console.log(1111);
+                     loadSuccess();
                  }
              }
              oImg.src="img/thumbs/"+(i+1)+".jpg";
@@ -43,11 +56,57 @@
             oImg.onload = function(){//大图
                 num++;
                 if(num == 48){
-                    console.log(1111);
+                    loadSuccess();
                 }
             }
             oImg.src="img/"+(i+1)+".jpg";
         }
+
+        var oContent = document.getElementById('content');
+        function loadSuccess(){
+            /*for(var i=0; i<24; i++){
+
+
+            }*/
+
+            var count = 0;
+            for(var i=1; i<5; i++){//行
+                for(var j=1; j<7; j++){//列
+                    var oDiv = document.createElement('div');
+                    oDiv.className = 'img';
+                    count++;
+                    oDiv.style.background = 'url(img/thumbs/'+count+'.jpg)';
+                    oDiv.pos = {
+                        row:i,
+                        col:j
+                    }
+                    oContent.append(oDiv);
+                }
+            }
+            var aDiv = oContent.getElementsByTagName('div');
+            var iLeft = (document.body.offsetWidth - 135*6)/7;
+            var iTop = (document.body.offsetHeight - 135*4)/5;
+            for(var i=0; i<24; i++){
+                var oDiv = aDiv[i];
+               /* col 1  iLeft*1       col*ILeft + （col-1）*img
+                col 2  ileft*2 + img
+                col 3  iLeft*3 + img*2*/
+                oDiv.style.left =  oDiv.pos.col*iLeft + (oDiv.pos.col-1) * 135 +'px';
+                oDiv.style.top =  oDiv.pos.row*iTop + (oDiv.pos.row-1) * 135 +'px';
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+
 
 
 
