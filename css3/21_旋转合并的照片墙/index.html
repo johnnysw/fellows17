@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #container{
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+
+        </div>
+        <div id="prev"></div>
+        <div id="next"></div>
+    </div>
+
+    <script>
+        var num = 0;
+        for(var i=0; i<24; i++){
+             var oImg = new Image();
+             oImg.onload = function(){//小图
+                 num++;
+                 if(num == 48){
+                     console.log(1111);
+                 }
+             }
+             oImg.src="img/thumbs/"+(i+1)+".jpg";
+         }
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){//大图
+                num++;
+                if(num == 48){
+                    console.log(1111);
+                }
+            }
+            oImg.src="img/"+(i+1)+".jpg";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
