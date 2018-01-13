@@ -43,6 +43,18 @@
             display: none;
             background:#ffffff url("img/prev.png") no-repeat center center;
         }
+        #next{
+            width: 40px;
+            height: 80px;
+            /*background: #ffffff;*/
+            position: absolute;
+            right:0;
+            top:50%;
+            -webkit-transform: translateY(-50%);
+            border-radius: 0 10px 10px 0;
+            display: none;
+            background:#ffffff url("img/next.png") no-repeat center center;
+        }
 
 
 
@@ -126,6 +138,7 @@
             var oNext = document.getElementById('next');
             var flag = true;//打开
             function fn(){
+//                -webkit-transition: all 1s ease 1s;
                 if(flag){ //合并
                     for(var i=0; i<aDiv.length; i++){
                         var oDiv = aDiv[i];
@@ -136,13 +149,13 @@
                         oDiv.style.top = (oDiv.pos.row-1) *127 + iT+"px";
                         oDiv.style.webkitTransform = 'rotate(0deg)';
                         aSpan[i].style.opacity = 1;
+                        aSpan[i].style.webkitTransitionDelay = '0ms';
                         aSpan[i].style.background = 'url(img/'+this.index+'.jpg) '
                                 +(oDiv.pos.col-1)*-125+'px '+(oDiv.pos.row-1)*-125+'px';
                     }
                     oPrev.style.display = 'block';
+                    oNext.style.display = 'block';
                     iNow = this.index;
-
-
                 }else{ //打开
                     for(var i=0; i<24; i++){
                         var oDiv = aDiv[i];
@@ -152,12 +165,15 @@
                         oDiv.style.border = '5px solid #fff';
                         oDiv.style.transform = 'rotate('+(Math.random()*40-20)+'deg)';
                         aSpan[i].style.opacity = 0;
+                        aSpan[i].style.webkitTransitionDelay = '0ms';
+                        oPrev.style.display = 'none';
+                        oNext.style.display = 'none';
                     }
                 }
                 flag = !flag;
             }
             oPrev.onclick = function(){
-                iNow--;
+                iNow--;  //iNow  1 - 24
                 if(iNow == 0){
                     iNow = 24;
                 }
@@ -165,7 +181,16 @@
                     aSpan[i].style.backgroundImage = 'url(img/'+iNow+'.jpg)';
                 }
             }
-
+            oNext.onclick = function(){
+                iNow++;  //iNow  1 - 24
+                if(iNow == 25){
+                    iNow = 1;
+                }
+                for(var i=0; i<aSpan.length; i++){
+                    aSpan[i].style.webkitTransitionDelay = Math.random()*500+"ms";
+                    aSpan[i].style.backgroundImage = 'url(img/'+iNow+'.jpg)';
+                }
+            }
 
 
 
