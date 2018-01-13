@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    width: 1002px;
+    margin:0 auto;
+}
+/*header开始*/
+    #logo{
+        width: 194px;
+        height: 120px;
+        float: left;
+    }
+    #logo a{
+        margin-top: 29px;
+        float: left;
+    }
+    .nav{
+        float: left;
+        margin-left: 134px;
+        margin-top: 49px;
+    }
+    .nav li{
+        float: left;
+        padding: 0 24px 0 25px;
+        position: relative;
+    }
+    .nav li::after{
+        content: '';
+        height: 14px;
+        width: 1px;
+        background: #6b6b6b;
+        display: block;
+        position: absolute;
+        right: 0;
+        top:50%;
+        margin-top:-7px;
+    }
+    .nav a{
+        color: #626262;
+        font-size: 15px;
+    }
+    .nav .active a{
+        color: #00aeff;
+    }
+
+
+/*header结束*/
