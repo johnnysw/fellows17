@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         #link{
             position: fixed;
             top:0;
@@ -20,9 +24,8 @@
         }
         #div3{
             background: #00f;
+            height: 800px;
         }
-
-
     </style>
 </head>
 <body>
@@ -37,10 +40,22 @@
     <div id="div3"></div>
     <script src="jquery-1.12.4.js"></script>
     <script>
-        $('a').on('click',function(){
 
+        $('a').on('click',function(){
+            var $div = $($(this).attr('href'));
+            $("html,body").animate({
+                scrollTop:$div.offset().top
+            },1000);
+            history.pushState($div.offset().top,'');
             return false;
         });
+
+        window.onpopstate = function(e){
+            $("html,body").animate({
+              scrollTop: e.state
+             },1000);
+//            return false;
+        }
 
 
     </script>
