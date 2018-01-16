@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs" width="600" height="600"></canvas>
+
+    <script>
+        var oCvs = document.getElementById('cvs');
+        var oCtx = oCvs.getContext('2d');
+
+        oCtx.beginPath();
+        for(var i=0; i<60; i++){
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180);
+        }
+        oCtx.stroke();
+        oCtx.closePath();
+
+        //盖 第一个圆
+        oCtx.beginPath();
+        oCtx.arc(300,300,95,0*Math.PI,2*Math.PI);
+        oCtx.fillStyle = "#fff";
+        oCtx.fill();
+        oCtx.closePath();
+
+        //画时针刻度
+        oCtx.beginPath();
+        for(var j=0; j<12; j++){
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,100,j*30*Math.PI/180,j*30*Math.PI/180);
+        }
+        oCtx.stroke();
+        oCtx.closePath();
+
+        //盖 第二个圆
+        oCtx.beginPath();
+        oCtx.arc(300,300,90,0*Math.PI,2*Math.PI);
+        oCtx.fillStyle = "#fff";
+        oCtx.fill();
+        oCtx.closePath();
+
+        //画秒针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,55,0*Math.PI,0*Math.PI);
+        oCtx.strokeStyle = "#f00";
+        oCtx.stroke();
+        oCtx.closePath();
+        //画分针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,45,0*Math.PI,0*Math.PI);
+        oCtx.strokeStyle = "#0f0";
+        oCtx.stroke();
+        oCtx.closePath();
+        //画时针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,35,0*Math.PI,0*Math.PI);
+        oCtx.strokeStyle = "#000";
+        oCtx.stroke();
+        oCtx.closePath();
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
