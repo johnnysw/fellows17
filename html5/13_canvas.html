@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+        }
+        #cvs{
+
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs" width="500" height="500">
+    </canvas>
+    <script>
+        var oCvs = document.querySelector('#cvs');
+        var oCtx = oCvs.getContext("2d");
+        oCtx.beginPath();
+        oCtx.moveTo(100,100);
+        oCtx.lineTo(300,300);
+        oCtx.lineTo(100,300);
+//        oCtx.lineTo(100,100);
+        oCtx.closePath();
+        oCtx.lineWidth = 10;
+        oCtx.strokeStyle = 'red';
+        oCtx.stroke();
+       /* oCtx.beginPath();
+        oCtx.moveTo(200,100);
+        oCtx.lineTo(450,450);
+        oCtx.lineWidth = 5;
+        oCtx.strokeStyle = 'blue';
+        oCtx.stroke();*/
+
+        //画弧
+
+//        oCtx.moveTo(50,250);
+
+
+        /*oCtx.arc(250,250,100,0,Math.PI);
+        oCtx.rect(50,50,200,150);
+        oCtx.lineWidth = 5;
+        oCtx.strokeStyle = 'blue';
+        oCtx.stroke();
+        oCtx.fillStyle = "yellow";
+        oCtx.fill();*/
+
+        var oImg = new Image();
+
+        oImg.onload = function(){
+            oCtx.drawImage(oImg,0,0,400,400);
+        }
+        oImg.src= '2.jpg';
+
+
+
+    </script>
+
+</body>
+</html>
