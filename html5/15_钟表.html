@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-
+        *{
             margin: 0;
             padding: 0;
         }
@@ -48,28 +48,46 @@
         oCtx.fill();
         oCtx.closePath();
 
-        //画秒针
-        oCtx.beginPath();
-        oCtx.moveTo(300,300);
-        oCtx.arc(300,300,55,0*Math.PI,0*Math.PI);
-        oCtx.strokeStyle = "#f00";
-        oCtx.stroke();
-        oCtx.closePath();
-        //画分针
-        oCtx.beginPath();
-        oCtx.moveTo(300,300);
-        oCtx.arc(300,300,45,0*Math.PI,0*Math.PI);
-        oCtx.strokeStyle = "#0f0";
-        oCtx.stroke();
-        oCtx.closePath();
-        //画时针
-        oCtx.beginPath();
-        oCtx.moveTo(300,300);
-        oCtx.arc(300,300,35,0*Math.PI,0*Math.PI);
-        oCtx.strokeStyle = "#000";
-        oCtx.stroke();
-        oCtx.closePath();
 
+        run();
+
+        setInterval(function(){
+            run();
+        },1000)
+        function run(){
+            oCtx.clearRect(245,245,110,110);
+            //获取当前时间
+
+            var oDate = new Date;
+            var iSeconds = oDate.getSeconds();
+            var iMinutes = oDate.getMinutes() + iSeconds/60;
+            var iHours = oDate.getHours() + iMinutes/60;
+
+            //画秒针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,55,(iSeconds*6-90)*Math.PI/180,(iSeconds*6-90)*Math.PI/180);
+            oCtx.lineWidth = 2;
+            oCtx.strokeStyle = "#f00";
+            oCtx.stroke();
+            oCtx.closePath();
+            //画分针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,45,(iMinutes*6-90)*Math.PI/180,(iMinutes*6-90)*Math.PI/180);
+            oCtx.lineWidth = 4;
+            oCtx.strokeStyle = "#0f0";
+            oCtx.stroke();
+            oCtx.closePath();
+            //画时针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,35,(iHours*30-90)*Math.PI/180,(iHours*30-90)*Math.PI/180);
+            oCtx.lineWidth = 6;
+            oCtx.strokeStyle = "#000";
+            oCtx.stroke();
+            oCtx.closePath();
+        }
 
 
 
