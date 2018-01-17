@@ -50,6 +50,13 @@ a{
     .nav .active a{
         color: #00aeff;
     }
+    #btn{
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: #f00 url("../images/icons.png") -5px -3px no-repeat;
+        margin:100px;
+    }
 
 
 /*header结束*/
