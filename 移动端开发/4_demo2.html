@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 960px;
+            margin: 0 auto;
+        }
+        #container h3{
+            height: 100px;
+            background: #cccccc;
+            margin:50px 0;
+            line-height: 100px;
+            text-align: center;
+        }
+        #img-box{
+            background:url("img/01.jpg") 0 0 no-repeat;
+            background-size: cover;
+            height: 0px;
+            padding-top: 56%;
+        }
+        #content{
+            /*height: 300px;*/
+            overflow: hidden;
+        }
+        #left{
+            width: 630px;
+            height: 300px;
+            background: #00ff00;
+            float: left;
+            display: table;
+        }
+        #right{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+            float: right;
+            display: table;
+        }
+        #content p{
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 960px){
+            #container{
+                width: 100%;
+            }
+            #img-box{
+                background-image:url("img/01_s_2x.jpg") ;
+            }
+            #left{
+                width: 68%;
+            }
+            #right{
+                width: 30%;
+            }
+        }
+        @media screen and (max-width:480px){
+            #img-box{
+                background-image:url("img/01_s.jpg") ;
+            }
+            #left,#right{
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3>页头</h3>
+        <h3>标题</h3>
+        <div id="img-box">
+
+        </div>
+        <div id="content">
+            <div id="left">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+                </p>
+            </div>
+            <div id="right">
+                <p>
+                    Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.
+                </p>
+            </div>
+        </div>
+        <h3>页脚</h3>
+
+    </div>
+
+</body>
+</html>

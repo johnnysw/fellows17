@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#div1{
+    height: 50px;
+    background: #ff0000;
+}
+
+@media screen and (max-width:960px) {
+    #div1{
+        background: #0f0;
+    }
+}
+@media screen and (max-width:768px) {
+    #div1{
+        background: #00f;
+    }
+}
+@media screen and (orientation:landscape){
+    #div1{
+        background:#E31559;
+    }
+}
