@@ -40,24 +40,60 @@
     </div>
     <div id="img-box">
     </div>
-
-
     <script src="jquery-1.12.4.js"></script>
     <script src="jquery.mobile-1.4.5.min.js"></script>
     <script>
 
         var html = '';
+        var iNow = 0;
         for(var i=0; i<24; i++){
             html +="<img class='img' src='img/thumbs/"+(i+1)+".jpg'/>";
         }
         $('#container').append(html);
-
-        $('.img').on('tap',function(){
+        $('.img').on('tap',function(e){
             var idx = $(this).index();
+            iNow = idx;
             $('#container').hide();
             $('#img-box').show().css('background-image','url(img/'+(idx+1)+'.jpg)');
-
+//            console.log(1111);
+            e.preventDefault();
         });
+        $('#img-box').on('tap',function(e){
+            $('#container').show();
+            $('#img-box').hide();
+//            console.log(2222);
+            e.preventDefault();
+        });
+
+        $('#img-box').on('swipeleft',function(){
+            console.log(iNow);
+            iNow++;
+            if(iNow == $('.img').length){
+                iNow = 0;
+            }
+            $('#img-box').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+        });
+        $('#img-box').on('swiperight',function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = $('.img').length -1;
+            }
+            $('#img-box').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 
