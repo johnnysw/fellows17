@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <style>
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div2">
+
+    </div>
+
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        //click  300ms
+       /* $('#div2').on('click',function(){
+            console.log(1111);
+        });
+
+
+        $('#div2').on('tap',function(){
+            console.log(222);
+        });*/
+
+       /* $('#div2').on('touchstart',function(){
+            console.log(222);
+        });
+        $('#div2').on('touchend',function(){
+            console.log(11);
+        });*/
+
+        $('#div2').on('swipe',function(){
+            console.log(222);
+        });
+        $('#div2').on('swipeleft',function(){
+            console.log('left');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
