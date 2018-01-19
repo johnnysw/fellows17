@@ -1,0 +1,114 @@
+.img01,.img02{
+    width: 100%;
+    display: block;
+}
+.img02{
+    display: none;
+}
+#home-rewards{
+    /*height: 220px;*/
+    background: #0f0f0f;
+}
+#container{
+    width: 750px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*height: 100%;*/
+}
+.rewards-mark{
+    width: 260px;
+    height: 145px;
+    background:  #0f0f0f url("../imgs/rewards_bg.png") 0 0 no-repeat;
+    background-size: contain;
+    float: left;
+    padding: 75px 0 0 60px;
+}
+.rewards-content{
+    width: 430px;
+    float: right;
+    height: 100%;
+}
+.rewards-mark p{
+    color: #fff;
+    font-size: 18px;
+}
+.rewards-mark img{
+    width: 160px;
+}
+.rewards-content h3{
+     font-size: 25px;
+     color: #fff;
+    margin-top: 40px;
+ }
+.rewards-content p{
+    font-size: 16px;
+    color: #fff;
+}
+.rewards-btns{
+    margin-top: 20px;
+}
+.rewards-btns .btns{
+    width: 114px;
+    height: 50px;
+    border:1px solid #b89f7a;
+    background: #000000;
+    text-align: center;
+    line-height: 50px;
+    color:#b89f7a;
+    float: left;
+    margin-right: 20px;
+}
+.rewards-btns .btns:hover{
+    background: #b89f7a;
+    color: #ffffff;
+}
+@media screen and (max-width: 991px) {
+    .img02{
+        display: block;
+    }
+    .img01{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rewards-mark,.rewards-content{
+        width: 100%;
+    }
+    #home-rewards{
+        padding: 0 35px;
+    }
+    .rewards-mark{
+        padding: 55px 0 0 0;
+        text-align: center;
+        height: 85px;
+    }
+    #container{
+        width: 100%;
+    }
+    .rewards-content{
+        text-align: center;
+    }
+    .rewards-content h3{
+        margin-bottom: 10px;
+    }
+    .rewards-btns {
+        margin-top: 40px;
+    }
+    .rewards-btns .btns{
+        width: 80%;
+        float: none;
+        display: block;
+        margin:0 auto 10px;
+
+    }
+
+
+
+
+
+
+
+
+
+}
