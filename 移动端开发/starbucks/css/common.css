@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    display: -webkit-box;
+    height: 100px;
+    box-shadow: 0 -5px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 3px;
+}
+#menu{
+    -webkit-box-flex: 5;
+    width: 0;
+    margin-left: 33px;
+}
+#menu .menu-icon{
+    margin-top: 32px;
+    cursor: pointer;
+}
+#menu p{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    width: 30px;
+    text-align: center;
+    opacity: 0.7;
+    cursor: pointer;
+}
+#menu p:hover{
+    opacity: 1;
+}
+#logo{
+    -webkit-box-flex: 2;
+    width: 0;
+    text-align: center;
+}
+#logo img{
+    width: 73px;
+    max-width: 100%;
+    margin-top:14px;
+}
+#user-info{
+    -webkit-box-flex: 5;
+    width: 0;
+    margin-right: 28px;
+}
+#user-info p{
+    text-align: right;
+    font-size: 16px;
+}
+#user-info .user-title{
+    margin-top: 35px;
+    color: #4e4e4e;
+}
+#user-info a{
+    color: #b89f7a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    #menu{
+        margin-left: 15px;
+    }
+    #user-info{
+        margin-right: 10px;
+    }
+    #user-info p{
+        font-size: 12px;
+    }
+    #user-info a{
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
