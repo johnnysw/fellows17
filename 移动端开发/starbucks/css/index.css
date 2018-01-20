@@ -102,6 +102,38 @@
 .btns{
     display: none;
 }
+#collection{
+    padding:80px 16px;
+}
+#collection h3{
+    color:#3d3d3d;
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
+#collection .collection-title{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 80px;
+    color:#8B8B8B;
+}
+.pro-list{
+    /*display: -webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-lines:multiple;*/
+    /* 新的弹性和模型*/
+    display: flex;
+    /* 水平居中*/
+    -webkit-justify-content: center;
+    /* 换行显示*/
+    -webkit-flex-wrap:wrap;
+}
+.pro-list li{
+    width: 240px;
+    height: 280px;
+    margin: 15px;
+    background: #eeeeee;
+}
 
 
 
@@ -146,12 +178,10 @@
         float: none;
         display: block;
         margin:0 auto 10px;
-
     }
     #app{
         background-image: url(../imgs/app-mobile.png);
         padding-top:98% ;
-
     }
     #app img{
         display: none;
@@ -162,8 +192,6 @@
         position: static;
         -webkit-transform:  translateY(0) translateX(0);
         text-align: center;
-
-
     }
     .app-text p{
         text-align: center;

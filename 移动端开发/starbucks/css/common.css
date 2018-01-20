@@ -5,6 +5,9 @@
 a{
     text-decoration: none;
 }
+ul{
+    list-style: none;
+}
 #header{
     display: -webkit-box;
     height: 100px;
