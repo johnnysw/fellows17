@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        /* let arr1 = [1, 2, 3];
+        let arr2 = ['a', 'b', 'c', ...arr1]; */
+        //数组合并
+        /* let arr1 = [1, 2, 3];
+        let arr2 = ['a', 'b', 'c']; */
+
+        // console.log(arr1.concat(arr2));
+        // console.log([...arr1,...arr2]);
+        //数组复制
+        /* let arr1 = [1, 2, 3];
+        // let arr3 = arr1;
+        let arr3 = [...arr1];
+
+        arr1[0] = 5;
+        console.log(arr3); */
+
+        //类数组转化成数组
+        let aLi = document.querySelectorAll('li');
+        // aLi.push(1);
+        /* let arr = [1, 2, 3];
+        arr.push(4);
+        console.log(aLi);
+        console.log(arr); */
+
+        /* let arr = [];
+        for(let i=0; i<aLi.length; i++){
+            arr.push(aLi[i]);
+        }
+        arr.push(0);
+        console.log(arr); */
+
+
+        /* let arr = [...aLi];
+        arr.push(0);
+        console.log(arr); */
+
+        //rest 取到的是个数组 并且只能是最后一个参数
+        function add(x,...args) {
+            // console.log(arguments[2]);
+            // console.log(x,y);
+            console.log(x,args,z);
+        }
+        add(1, 2, 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // console.log(arr2);
+
+
+
+
+    </script>
+</body>
+
+</html>
