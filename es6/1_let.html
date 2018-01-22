@@ -74,12 +74,66 @@
 
         
         // call apply bind
+        //闭包 在外部函数中有一个内部函数，
+       // 内部函数引用外部函数中的局部变量，
+       // 外部函数执行完，变量空间不释放，
 
+        /* for(var i=0; i<aLi.length; i++){
+            // aL[i].index;
+            (function(idx){
+                aLi[i].onclick = function(){
+                    console.log(idx);
+                }
+            })(i);
+        } */
         for(let i=0; i<aLi.length; i++){
             aLi[i].onclick = function(){
                 console.log(i);
             }
         }
+
+       /*  function a(){
+            //局部变量
+            var x = 0;
+        }
+        a();
+
+        console.log(x); */
+
+        //1 let 没有变量提升 
+        console.log(x); //not defined
+        let x = 10;
+        //2.let定义的变量不能重新声明
+        var y = 10;
+        var y = 20;
+
+        let z = 1;
+        let z = 2;
+        //3.临时失效区（暂时性死区）
+        // let 定义的变量 在当前作用域下 不允许其他同名的变量进来
+        var a = 5;
+        function b(){
+            console.log(a); //not defined
+            var a = 10;
+            console.log(a);
+        }
+        b();
+        //4 块级作用域
+        {
+            let x = 10;
+        }
+
+        console.log(x);
+
+        
+
+
+
+
+
+
+
+
 
 
 
