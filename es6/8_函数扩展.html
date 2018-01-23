@@ -53,7 +53,7 @@
 
         // console.log(add.name);
         //箭头函数中this 声明时this  不是调用时
-        let aLi = document.getElementsByTagName('li');
+        /* let aLi = document.getElementsByTagName('li');
         for(var i=0;  i<aLi.length; i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
@@ -62,16 +62,35 @@
                 },1000);
             }
         }
-        let obj = {
+        */
+        /* let obj = {
             kkkkkkk:'lisi',
             age:10,
             say:() => {
-                // 箭头函数没有this 到父上下文 中的this 
-                // console.log(this);
-                console.log(this.kkkkkkk);
+                //this
+                // 箭头函数没有this 找的是父上下文 中的this                 
+                let aa = () => {
+                    //this
+                    setTimeout(() => {
+                        console.log(this);
+                    },1000);
+                }
+                aa();
             }
         }
-        obj.say();
+        obj.say(); */
+
+
+        Person = (name,age) => {
+            this.name = name;
+            this.age = age;
+        }
+        var p1 = new Person('zs',10);
+
+        console.log(p1.name);
+
+
+
         
 
 

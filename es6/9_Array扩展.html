@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>333</li>
+    </ul>
+
+    <script>
+        //类数组 转化成数组
+        /* let aLi = document.getElementsByTagName('li');
+        var arr = [];
+
+        for(var i=0; i<aLi.length; i++){
+            arr.push(aLi[i]);
+        }
+
+        var arr1 = [...aLi];
+
+        var arr2 = Array.from(aLi);
+        console.log(arr2); */
+
+
+        // var arr1 = [1, 2, 3, 4, 5, 6, 7];
+        // [1, 2, 5, 6, 5, 6, 7]
+        var arr2 = new Array(1, 2, 3);
+        var arr3 = new Array(4); //length
+
+        /*  var arr4 = Array.of(4);
+         console.log(arr4); */
+
+        // var arr5 = arr1.copyWithin(2, 4, 6);
+        // console.log(arr5);
+        //用于找出第一个符合条件的数组成员 
+        /* var x = arr1.find(function (val, index, arr) {
+            console.log(val);
+            return index > 3;
+        });
+
+        console.log(x); */
+       /*  arr1.fill('0',1,3);
+        var arr = [0,0,0]; */
+        //new Array(3).fill(0);
+        //console.log(arr1);
+        var arr1 = [1, 2, 3, 4, 5, 6, 7];
+        /* for(a of arr1){
+            console.log(a);
+        } */
+        /* for(a of arr1.keys()){ //index
+            console.log(a);
+        } */
+
+       /*  for([index,val] of arr1.entries()){ //index
+            console.log(index,val);
+        } */
+        /* arr1.forEach(function(val,index,arr){
+            console.log(val,index);
+        }) */
+
+        var arr8 = arr1.filter(function(val,index,arr){
+            return index>3;
+        });
+        console.log(arr8);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
