@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>333</li>
+        <li>44</li>
+    </ul>
+    <script>
+        /* 1.let 没有变量提升
+        2.let定义的变量不能重新声明
+        3.临时失效区
+        4.块级作用域 */
+
+
+        /*    console.log(a); //not defined
+           let a = 10; */
+
+        // let a = 20
+
+        /*  var x = 5;
+     
+         function b(){
+             console.log(x);   
+             let x = 5;
+         }
+         b(); */
+
+
+
+        /* {
+            let x = 10;
+        }
+        console.log(x); */
+
+
+        /* let aLi = document.getElementsByTagName('li');
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            }
+        } */
+
+        /* const a = 10;
+    
+        a = 30; */
+
+        /*   const arr = [1,2,3];
+          Object.freeze(arr);//冻结
+          arr[0] = 5;
+          console.log(arr);
+       */
+
+        /* let [a, b, c] = [1, 2, 3];
+        console.log(a, b, c);
+
+        let [a, b, [c, d], e = 4] = [1, 2, [3, 4]];
+ */
+        /* let { a: c, b } = { a: 1, b: 2 };
+        console.log(c, b); */
+
+       /*  let [a, b] = 'dfghjk';
+
+        console.log(a, b);
+
+        function a([x,y,z]){
+            console.log(x,y,z);
+        }
+        a([1,2,3]);
+ */
+
+       /*  let arr1 = [1,2];
+        let arr2 = [3,4];
+
+        let arr3 = [...arr1,...arr2]; */
+
+
+        // let arr1 = [1,2,3];
+        // let arr2 = arr1;
+        // let arr2 = [...arr1];
+
+        let obj1 = {
+            name:'zs',
+            age:20
+        }
+        let obj2 = {
+            name:'lisi',
+            school:'weichuang'
+        }
+         
+        let obj3 = {...obj1,...obj2};
+
+        console.log(obj3);
+
+        let aLi = document.querySelectorAll('li');
+
+        let arr = [...aLi];
+
+
+        // rest
+
+
+        function aa(a,...args){
+            // arguments
+
+            console.log(args);// ['b','c'];
+        }
+        aa('a','b','c');
+        let a = 10;
+
+        let str = `dfghlasik${a}fdg gcuydfg `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

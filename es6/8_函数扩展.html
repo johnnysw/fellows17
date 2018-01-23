@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>333</li>
+    </ul>
+    <script>
+        /* a();
+        function a(){
+
+        }
+        var a = function(x){
+
+        } */
+        //箭头函数
+        /* var a = (x) => {
+
+        } */
+
+        /* let add = (x,y) => {
+            return x+y;
+        }
+        let a = x => {
+            return x+5;
+        } */
+        // console.log(add(1,2));
+        // console.log(a(6));
+
+        // let x = x => x;
+        
+        /* let add = function(x,y){
+
+        } */
+
+     /*    let add = ([x,y = 1]) => {
+            console.log(x,y);
+        }
+        add([3]); */
+        //箭头中不允许使用arguments
+        /* let add = (...args) => {
+            // console.log(arguments);
+            console.log(args);
+        }
+        add(3,1); */
+
+        // console.log(add.name);
+        //箭头函数中this 声明时this  不是调用时
+        let aLi = document.getElementsByTagName('li');
+        for(var i=0;  i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                setTimeout(() => {
+                    console.log(this.index);
+                },1000);
+            }
+        }
+        let obj = {
+            kkkkkkk:'lisi',
+            age:10,
+            say:() => {
+                // 箭头函数没有this 到父上下文 中的this 
+                // console.log(this);
+                console.log(this.kkkkkkk);
+            }
+        }
+        obj.say();
+        
+
+
+
+
+
+
+        
+    
+    </script>
+</body>
+</html>
