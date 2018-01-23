@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'zhangs',
+            age:10
+        }
+       
+        // console.log(obj.name);
+
+        var p = new Proxy(obj,{
+            get:function(target,key,property){
+                //获取之前操作
+                console.log('get...');
+                console.log(target,key,property);
+                return target[key]; //obj[key]
+            },
+            set:function(target,key,value,property){
+                //设置之前操作
+                console.log('set...');
+                console.log(`我正在设置${value}的${key}属性`);
+                console.log(target,key,value,property);
+                target[key] = value; //obj[key] = value
+            }
+        });
+        // console.log(p.name);
+        // console.log(p.age);
+        p.name = 'lisi';
+
+        console.log(obj);
+    
+    </script>
+
+</body>
+</html>
