@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let add = (x,y) => x+y;
+        console.log(add(2,3));
+
+        // 1.箭头函数中this指向声明时的this   调用时的this
+
+
+        let aLi = document.getElementsByTagName('li');
+        for(var i=0;  i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                setTimeout(() => {
+                    console.log(this.index);
+                },1000);
+            }
+        }
+        let obj = {
+            kkkkkkk:'lisi',
+            age:10,
+            say:() => {
+                let aa = () => {
+                    setTimeout(() => {
+                        console.log(this);
+                    },1000);
+                }
+                aa();
+            }
+        }
+        //2.arguments  ...args
+
+
+        //3.不能用做构造函数
+        let name = 'zs';
+        let age = 20;
+        let obj = {
+            name,
+            age
+            [name]
+        }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+
+</html>

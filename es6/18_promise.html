@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let pro = new Promise(function(resolve,reject){
+            let data = {
+                status:0
+            }
+
+            // resolve();
+            reject();
+            // $.get(function(data){
+               /*  if(data.status == 1){//代表成功
+                    resolve();
+                }else{
+                    reject();
+                } */
+            // });
+        });
+        pro.then(function(){
+            console.log('111成功');
+            return new Promise(function(resolve,reject){
+                resolve();
+            });
+        }).then(function(){
+            console.log('2222成功');
+        }).catch(function(){
+            console.log('失败');
+        });
+
+
+        
+        
+        
+        
+        
+    </script>
+
+
+
+
+</body>
+
+</html>

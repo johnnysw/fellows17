@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ajax  Asynchronous Javascript And XML（异步JavaScript和XML）
+
+        
+    -->
+    <ul>
+
+        <!-- <li>黑白调 电脑椅家用 办公椅 椅子人体工学椅座椅转椅 </li> -->
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        /* $.get('product-data.json',function(data){
+            let aList = data.productData;
+            let str = ''
+            for(let i=0; i<aList.length; i++){
+                str += `<li>${aList[i].name}</li>`;
+            }
+            $('ul').append(str);
+        },'json');
+ */
+        //get  $.post   
+        //1.创建 XMLHttpRequest 对象
+
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //2.向服务器发送请求
+
+        xmlhttp.open("GET", "demo_get.asp", true);
+        xmlhttp.send();
+
+        //3 onreadystatechange 事件 响应请求
+
+        xmlhttp.onreadystatechange = function () {
+
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+
+
+        /* 
+        存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+        0: 请求未初始化
+        1: 服务器连接已建立
+        2: 请求已接收
+        3: 请求处理中
+        4: 请求已完成，且响应已就绪
+        
+        
+        
+        
+        
+        
+        */
+
+
+        //省 市 区 
+
+        $.get(url1,省id,function(){
+            //返回市信息
+            $.get(ulr2,市id,function(){
+                //返回区信息
+                
+
+            })
+
+        },json);
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
