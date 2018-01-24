@@ -12,38 +12,93 @@
 
     <script>
 
-        let pro = new Promise(function(resolve,reject){
+        /* let pro = new Promise(function (resolve, reject) {
             let data = {
-                status:0
+                status: 0
             }
 
             // resolve();
             reject();
             // $.get(function(data){
-               /*  if(data.status == 1){//代表成功
-                    resolve();
-                }else{
-                    reject();
-                } */
+            if(data.status == 1){//代表成功
+                 resolve();
+             }else{
+                 reject();
+             }
             // });
         });
-        pro.then(function(){
+        pro.then(function () {
             console.log('111成功');
-            return new Promise(function(resolve,reject){
+            return new Promise(function (resolve, reject) {
                 resolve();
             });
-        }).then(function(){
+        }).then(function () {
             console.log('2222成功');
-        }).catch(function(){
+        }).catch(function () {
             console.log('失败');
         });
 
 
+
+ */
+
+
+
+
+
+        /* let pro = new Promise(function(resolve,reject){
+            resolve();
+        });
+        pro.then(function(){
+            console.log('111成功');
+            return new Promise(function(resolve,reject){
+                reject();
+            });
+        }).then(function(){
+            console.log('222成功');
+        }).catch(function(){
+            console.log('失败。。。。');
+        });
+ */
+
+        let p1 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('111111');
+                resolve();
+            }, 1000);
+        });
+        let p2 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('2222');
+                reject('我是p2');
+            }, 200);
+        });
+        let p3 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('3333');
+                reject();
+            }, 500);
+        });
+
+        /* Promise.all([p1, p2, p3]).then(function(){
+            console.log('okokok');
+        }).catch(function(){
+            console.log('sorry');
+        });
+ */
+        Promise.race([p1, p2, p3]).then(function(data){
+            console.log(data+'okokok');
+        }).catch(function(data){
+            console.log(data+'sorry');
+        });
         
-        
-        
-        
-        
+
+
+
+
+
+
+
     </script>
 
 
