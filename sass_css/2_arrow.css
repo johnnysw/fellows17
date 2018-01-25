@@ -1,0 +1,6 @@
+#div1 {
+  width: 0px;
+  height: 0px;
+  border: 30px solid transparent;
+  border-left: 30px solid #f00;
+}

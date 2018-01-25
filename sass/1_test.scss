@@ -26,3 +26,42 @@ p{
         background: #000;
     }
 }
+@mixin aa($color:#000){
+    border: 2px solid $color;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px 4px rgba(0,0,0,0.4);
+}
+
+.aa{
+    width:200px;
+    height: 300px;
+    @include aa();
+}
+.bb{
+    @include aa(rgb(224, 31, 192));
+}
+
+.cc{
+    color: #f00;
+    background: #000000;
+}
+.dd{
+    @extend .cc;
+    width: 300px;
+}
+
+%ee{
+    width: 200px;
+    height: 200px;
+}
+.ff{
+    @extend %ee;
+}
+.hh{
+    @extend %ee;
+}
+
+
+
+
+

@@ -30,3 +30,31 @@ p {
 .nav-item {
   background: #000;
 }
+
+.aa {
+  width: 200px;
+  height: 300px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bb {
+  border: 2px solid #e01fc0;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cc, .dd {
+  color: #f00;
+  background: #000000;
+}
+
+.dd {
+  width: 300px;
+}
+
+.ff, .hh {
+  width: 200px;
+  height: 200px;
+}

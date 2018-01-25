@@ -1,0 +1,10 @@
+@mixin arrow($dir,$size,$color){
+    border:$size solid transparent;
+    border-#{$dir}:$size solid $color;
+}
+#div1{
+    width: 0px;
+    height: 0px;
+    @include arrow('left',30px,#f00);
+}
+
