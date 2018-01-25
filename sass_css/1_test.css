@@ -1,0 +1,32 @@
+div {
+  background: blue;
+  color: blue;
+}
+
+div a {
+  font-size: 14px;
+}
+
+div a img {
+  width: 200px;
+}
+
+div a span {
+  color: #f00;
+}
+
+div a:hover {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+.nav {
+  color: #f00;
+}
+
+.nav-item {
+  background: #000;
+}

@@ -1,0 +1,28 @@
+$color:blue;
+$name : color;
+$fs:14px;
+div{
+    background: $color;
+    #{$name}: $color;
+    a{
+        font-size: $fs;
+        img{
+            width:200px;
+        }
+        span{
+            color:#f00;
+        }
+        &:hover{
+            color:red;
+        }
+    }
+}
+p{
+    color: $color;
+}
+.nav{
+    color: #f00;
+    &-item{
+        background: #000;
+    }
+}
