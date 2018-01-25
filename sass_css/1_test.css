@@ -1,21 +1,27 @@
-div {
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.xx {
   background: blue;
   color: blue;
 }
 
-div a {
+.xx a {
   font-size: 14px;
 }
 
-div a img {
+.xx a img {
   width: 200px;
 }
 
-div a span {
+.xx a span {
   color: #f00;
 }
 
-div a:hover {
+.xx a:hover {
   color: red;
 }
 
@@ -57,4 +63,87 @@ p {
 .ff, .hh {
   width: 200px;
   height: 200px;
+}
+
+.hh {
+  margin: 20px;
+  text-align: center;
+  width: 300px;
+  border: 1px solid blue;
+  background: #6666ff;
+}
+
+/*这是注释*/
+#div1 {
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  /*@if $dir == 'bottom'{
+        $dir : 'top';
+    }@else if $dir == 'top'{
+        $dir : 'bottom';
+    }@else if $dir == 'left'{
+        $dir : 'right';
+    }@else if $dir == 'right'{
+        $dir : 'left';
+    }*/
+  border-bottom: 30px solid pink;
+  -webkit-transform: rotate(180deg);
+}
+
+.qq {
+  width: 11px;
+}
+
+.item-1 {
+  width: 20px;
+  height: 10px;
+}
+
+.item-2 {
+  width: 40px;
+  height: 10px;
+}
+
+.item-3 {
+  width: 60px;
+  height: 10px;
+}
+
+.item-4 {
+  width: 80px;
+  height: 10px;
+}
+
+.item-5 {
+  width: 100px;
+  height: 10px;
+}
+
+.nav-4 {
+  width: 80px;
+}
+
+.nav-3 {
+  width: 60px;
+}
+
+.nav-2 {
+  width: 40px;
+}
+
+.nav-1 {
+  width: 20px;
+}
+
+.item-error {
+  background: url("img/error.jpg");
+}
+
+.item-warning {
+  background: url("img/warning.jpg");
+}
+
+.item-truth {
+  background: url("img/truth.jpg");
 }

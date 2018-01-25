@@ -1,7 +1,8 @@
+@import 'common';
 $color:blue;
 $name : color;
 $fs:14px;
-div{
+.xx{
     background: $color;
     #{$name}: $color;
     a{
@@ -57,11 +58,53 @@ p{
 .ff{
     @extend %ee;
 }
+$c : CENTER;
+$w:WIDTH;
+
 .hh{
     @extend %ee;
+    margin:abs(-20px);
+    text-align: to-lower-case($c);
+    #{to-lower-case($w)}:300px;
+    border:1px solid $color;
+    background: lighten($color,20%);
+}
+/*这是注释*/
+
+//我也是注释
+
+#div1{
+    @include arrow(bottom,30px,pink);
+}
+@function add($x,$y){
+    @return $x+$y;
+}
+.qq{
+    width:add(5px,6px);
 }
 
+@for $i from 1 through 5{
+    .item-#{$i}{
+        width:20px*$i;
+        
 
+        height:(50px/5);
+    }
+}
+$z:4;
+@while ($z>0){
+    .nav-#{$z}{
+        width:20px*$z;
+    }
+    $z : $z - 1;
+}
+
+$icons : error warning truth;
+@each $item in $icons{
+    .item-#{$item}{
+        background: url("img/#{$item}.jpg");
+    }
+}
 
 
 

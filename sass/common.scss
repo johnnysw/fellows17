@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@mixin arrow($dir,$size,$color){
+    width: 0;
+    height: 0;
+    border:$size solid transparent;
+    /*@if $dir == 'bottom'{
+        $dir : 'top';
+    }@else if $dir == 'top'{
+        $dir : 'bottom';
+    }@else if $dir == 'left'{
+        $dir : 'right';
+    }@else if $dir == 'right'{
+        $dir : 'left';
+    }*/
+    border-#{$dir}:$size solid $color;
+    -webkit-transform: rotate(180deg);
+}
