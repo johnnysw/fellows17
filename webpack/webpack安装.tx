@@ -1,0 +1,15 @@
+1.  安装过node  node -v 查看node版本
+2.  npm init -y 
+    =>生成package.json配置文件 （name值 不要叫webpack）
+3.  安装webpack: npm install --save-dev webpack 
+4.  package.json 配置webpack 命令
+    => "scripts": {
+           "build": "webpack"
+       },
+    =>npm run build
+
+5.  在项目根目录下 新建webpack.config.js
+6   安装webpack-dev-server
+    npm install --save-dev webpack-dev-server
+    
+
