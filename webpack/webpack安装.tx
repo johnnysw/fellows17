@@ -11,5 +11,21 @@
 5.  在项目根目录下 新建webpack.config.js
 6   安装webpack-dev-server
     npm install --save-dev webpack-dev-server
+    执行 npm run server 
+7.  安装html-webpack-plugin  打包html
+    npm run build
+8.  安装 css-loader style-loader
+9.  分离css extract-text-webpack-plugin
+    npm install --save-dev extract-text-webpack-plugin
+
+
+
+
+1. 安装
+2. const a = require('插件名');
+3. 配置
+    
+
+
     
 
