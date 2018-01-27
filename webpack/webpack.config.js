@@ -2,6 +2,9 @@ const path = require('path');
 const devServer = require('webpack-dev-server');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = {
     entry:{
         index:'./src/index.js',
@@ -9,7 +12,8 @@ module.exports = {
     },
     output:{
         path: path.resolve(__dirname,'dist'),
-        filename:'[name].js'
+        filename:'[name].js',
+        publicPath:"http://localhost:8081"
     },
     module:{
         rules:[
@@ -18,8 +22,45 @@ module.exports = {
                 // use:['style-loader','css-loader']
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: [{
+                        loader:"css-loader",
+                        options:{
+                            importLoaders:1
+                        }
+                    },"postcss-loader"]
                 })
+            },{
+                test:/\.(jpg|jpeg|png|gif)/,
+                use:[{
+                    loader:"url-loader",
+                    options:{
+                        limit:500,
+                        outputPath:'/images/'
+                    }
+                }]
+            },
+            {
+                test:/\.html$/i,
+                use:['html-withimg-loader']
+            },
+            {
+                test:/\.scss$/,
+                // use:["style-loader","css-loader","sass-loader"]
+
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader","sass-loader"]
+                })
+            },
+            {
+                test:/\.js$/,
+                use:[{
+                    loader:"babel-loader",
+                    options:{
+                        presets:['env']
+                    }
+                }],
+                exclude:'/node_modules/'
             }
         ]
     },
@@ -32,7 +73,13 @@ module.exports = {
             template:"./src/index.html",
             chunks:['index']
         }),
-        new ExtractTextPlugin("css/index.css")
+        new ExtractTextPlugin("css/index.css"),
+        new PurifyCSSPlugin({
+            paths: glob.sync("./src/*.html")
+        })
+
+
+        // new UglifyJsPlugin()
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
