@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" @keyup="filterArr()">
+        <button @click = "fn()">add</button>
+        <ul>
+            <li v-for="obj in arr"
+             @click="change(obj)" 
+             :class="{red:obj.isRed}">{{obj.name}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'',
+                arr:[],
+                newArr:[]
+            },
+            methods:{
+                fn(){
+                    console.log(this);
+                    this.arr = this.newArr;
+                    var obj = {
+                        name:this.msg,
+                        isRed:false
+                    }
+                   this.arr.push(obj) ;
+                   this.newArr = this.arr;
+                   this.msg = "";
+                  // [{name:aaa,isRed:false},{name:bbb,isRed:false}]
+                   this.arr.sort(function(x,y){
+                        return x.name > y.name;
+                   });
+                },
+                change(o){
+                    o.isRed = !o.isRed;
+                },
+                filterArr(){
+                    // console.log(this.arr);
+                    var arr1 = this.arr.filter((obj) => {
+                        //[{name:aaa,isRed:false},{name:bbb,isRed:false}]
+                        console.log(obj.name,this.msg);
+                        return obj.name.includes(this.msg);
+                    });
+                    this.arr = arr1;
+                }
+            }
+            
+        });
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

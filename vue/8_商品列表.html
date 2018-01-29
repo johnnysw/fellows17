@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        h2{
+            text-align: center;
+            margin: 10px 0;
+        }
+        #app{
+            width: 300px;
+            margin:0 auto;
+        }
+        li{
+            line-height: 50px;
+            height: 50px;
+            background: greenyellow;
+            margin-bottom: 3px;
+        }
+        .bg{
+            background: red;
+        }
+        li span{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>services</h2>
+        <ul>
+            <li v-for="obj in arr" 
+            @click="fn(obj)" 
+            :class="{bg:obj.isBg}">{{obj.name}}<span>{{obj.price}}</span></li>
+        </ul>
+        <hr/>
+        <div>
+            <span>total</span>
+            <span>{{num}}</span>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                arr:[
+                    {name:'aa',price:123,isBg:false},
+                    {name:'bb',price:12,isBg:false},
+                    {name:'cc',price:34,isBg:false},
+                    {name:'dd',price:56,isBg:false},
+                    {name:'ee',price:18,isBg:false}
+                ],
+                num:0
+            },
+            methods:{
+                fn:function(o){
+                    o.isBg = !o.isBg;
+                    if(o.isBg){  //选中
+                        this.num += o.price;
+                    }else{ //取消掉了
+                        this.num -= o.price;
+                    }
+                }
+            }
+        });
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
