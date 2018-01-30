@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .aa{
+            background: red;
+        }
+        .bb{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        
+        <span v-html="msg"></span>
+        <div id="div1" @click="fn()">111111</div>
+        <ul>
+            <li v-for="val in arr"  :title="val">{{val}}</li>
+        </ul>
+        <div :class="{aa:isA,bb:isB}">aaaaaaaa</div>
+
+
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'<h2>aaaa</h2>',
+                arr:[1,2,3,4,5],
+                isA:true,
+                isB:false
+            },
+            methods:{
+                fn(){
+                    // event
+                    console.log(this.msg);
+                }
+            }
+        });
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
