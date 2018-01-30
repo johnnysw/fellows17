@@ -102,6 +102,21 @@
                 $(this).parent().next().text(price*sum);
                 total();
             });
+            $(".sub").on('click',function(){
+                $input = $(this).next();
+                if($input.val() > 0){
+                    var sum = parseInt($input.val())-1;
+                    $input.val(sum);
+                    var price = $(this).parent().prev().text();
+                    //改总金额
+                    $(this).parent().next().text(price*sum);
+                    total();
+                }
+            });
+            $('.del').on('click',function(){
+                $(this).parents('tr').remove();
+                total();
+            });
             $(':checkbox').on('click',function(){
                 total();
             });
