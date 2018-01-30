@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <input type="radio" v-model="sex" value="男">男
+        <input type="radio" v-model="sex" value="女">女
+        <br/>
+        <input type="checkbox" v-model = "hobby" value="足球">足球
+        <input type="checkbox" v-model = "hobby" value="篮球">篮球
+        <input type="checkbox" v-model = "hobby" value="乒乓球">乒乓球
+        <select v-model="school">
+            <option value="黑大">黑大</option>
+            <option value="理工">理工</option>
+            <option value="林大">林大</option>
+        </select>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:'',
+                sex:'',
+                hobby:['乒乓球'],
+                school:'林大'
+            }
+        });
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+</body>
+
+</html>

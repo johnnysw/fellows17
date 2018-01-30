@@ -10,12 +10,16 @@
 
 <body>
     <div id="app">
+        <button @click="fn()">push</button>
+        <button @click="pop()">pop</button>
+        <button @click="change()">change</button>
         <ul>
-            <li v-for="(val,index) in arr">{{val}}----{{index}}</li>
+            <li v-for="val in arr">{{val}}</li>
         </ul>
         <ul>
             <li v-for="(val,key) in student">{{key}}:{{val}}</li>
         </ul>
+
     </div>
     <script src="vue.js"></script>
     <script>
@@ -28,6 +32,24 @@
                     age: 20,
                     munber: 01,
                     school: 'weichuang'
+                }
+            },
+            methods:{
+                fn(){
+                    this.arr.push(Math.random());
+                },
+                pop(){
+                    this.arr.pop();
+                },
+                change(){
+                    //
+                    // Vue.set(this.arr,1,666);
+                    // this.arr[1] = '6666';
+                    /* var a = this.arr.splice(1,1,88);
+                    console.log(a); */
+
+                    //this.arr.length = 2;
+                    this.arr.splice(2);
                 }
             }
         });
