@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .header{
+            background: #ff0000;
+        }
+        .content{
+            background: #ffff00;
+        }
+        .footer{
+            background: green;
+        }
+    </style>
 </head>
 
 
 <body>
     <div id="app">
-        <demo title="我是title1" content="我是内容1">
-            <h3>我是传值footer</h3>
-            <h3>我是传值footer</h3>
-            <h3>我是传值footer</h3>
+        <demo title="我是title1" >
+            <h2 slot="content">我是传值content</h2>
+            <h3 slot="footer">我是传值footer</h3>
         </demo>
-        <demo title="我是title2" content="我是内容2">
+        <!-- <demo title="我是title2" >
             <h3>我是传值footer2222</h3>
-        </demo>
+        </demo> -->
     </div>
     <div id="app2">
       
@@ -26,13 +36,18 @@
     <script src="vue.js"></script>
     <script type="text/x-template" id="temp">
         <div>
-            <h2>{{title}}</h2>
-            <p>{{content}}</p>
-            <div>
+            <h2 class="header">{{title}}</h2>
+            <div class="content">
+                <slot name="content">
+                    <p>我是内容默认值1</p>
+                </slot>
+                <p>我是内容默认值2</p>
+            </div>
+            <div class="footer">
                 <span>我是footer</span>
-                <slot>
+                <slot name="footer">
                     <span>我是默认footer</span>
-                <slot>
+                </slot>
             </div>
         </div>
     </script>
