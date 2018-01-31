@@ -33,7 +33,7 @@
                 </tr>
             </thead>
             <tbody id="product-list">
-                <tr v-for="obj in proList">
+                <tr v-for="(obj,index) in proList">
                     <td>
                         <input type="checkbox" v-model="checkPro" :value="obj">
                     </td>
@@ -54,7 +54,7 @@
                     </td>
                     <td class="total-price">{{obj.productQuentity*obj.productPrice}}</td>
                     <td>
-                        <a href="javascript:;" class="del">删除</a>
+                        <a href="javascript:;" class="del" @click="del(index,obj)">删除</a>
                     </td>
                 </tr>
             </tbody>
@@ -89,6 +89,14 @@
                     if(obj.productQuentity > 0){
                         obj.productQuentity--;
                     }   
+                },
+                del(idx,obj){
+                    //从proList 商品列表中删除
+                    this.proList.splice(idx,1);
+                    //删除的商品 在已被勾选数组中的索引
+                    //this.checkPro.indexOf(obj)
+                    //从checkPro 已经勾选的商品列表中删除
+                    this.checkPro.splice(this.checkPro.indexOf(obj),1);
                 }
             },
             computed:{
