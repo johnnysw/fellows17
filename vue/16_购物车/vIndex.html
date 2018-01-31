@@ -33,27 +33,26 @@
                 </tr>
             </thead>
             <tbody id="product-list">
-                <tr>
+                <tr v-for="obj in proList">
                     <td>
-                        <input type="checkbox">
+                        <input type="checkbox" v-model="checkPro" :value="obj">
                     </td>
                     <td>
-                        <img src="img/1.jpg" alt="" width="100">
+                        <img :src="obj.productImg" alt="" width="100">
                     </td>
-                    <td>黄鹤楼</td>
+                    <td>{{obj.productName}}</td>
                     <td>
                         <ul>
-                            <li>打火机</li>
-                            <li>苹果皮</li>
+                            <li v-for="obj1 in obj.parts">{{obj1.partsName}}</li>
                         </ul>
                     </td>
-                    <td class="price">19</td>
+                    <td class="price">{{obj.productPrice}}</td>
                     <td>
-                        <button class="sub">-</button>
-                        <input type="text" value="1">
-                        <button class="add">+</button>
+                        <button class="sub" @click="sub(obj)">-</button>
+                        <input type="text" :value="obj.productQuentity">
+                        <button class="add" @click="obj.productQuentity++">+</button>
                     </td>
-                    <td class="total-price">19</td>
+                    <td class="total-price">{{obj.productQuentity*obj.productPrice}}</td>
                     <td>
                         <a href="javascript:;" class="del">删除</a>
                     </td>
@@ -65,7 +64,7 @@
                     </td>
                     <td>
                         总计：
-                        <span id="total">0</span>
+                        <span id="total">{{total}}</span>
                     </td>
                     <td>
                         <button>结账</button>
@@ -80,22 +79,33 @@
     <script src="axios.min.js"></script>
     <script>
         var vm = new Vue({
-            el:"#cart",
-            data:{
-                proList:[]
+            el: "#cart",
+            data: {
+                proList: [],
+                checkPro:[]
             },
-            beforeCreate:function(){
+            methods:{
+                sub(obj){
+                    if(obj.productQuentity > 0){
+                        obj.productQuentity--;
+                    }   
+                }
+            },
+            computed:{
+                total:function(){
+                    var sum = 0;
+                    for(var i=0; i<this.checkPro.length; i++){
+                        sum += this.checkPro[i].productPrice*this.checkPro[i].productQuentity
+                    }
+                    return sum;
+                }
+            },
+            beforeCreate: function () {
                 axios.get('cart.json').then((res) => {
                     this.proList = res.data.result.productList;
                 });
             }
         });
-
-
-
-
-
-
     </script>
 
 
