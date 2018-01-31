@@ -11,13 +11,31 @@
 
 <body>
     <div id="app">
-        <demo title="我是title1" content="我是内容1"></demo>
-        <demo title="我是title2" content="我是内容2"></demo>
+        <demo title="我是title1" content="我是内容1">
+            <h3>我是传值footer</h3>
+            <h3>我是传值footer</h3>
+            <h3>我是传值footer</h3>
+        </demo>
+        <demo title="我是title2" content="我是内容2">
+            <h3>我是传值footer2222</h3>
+        </demo>
     </div>
     <div id="app2">
       
     </div>
     <script src="vue.js"></script>
+    <script type="text/x-template" id="temp">
+        <div>
+            <h2>{{title}}</h2>
+            <p>{{content}}</p>
+            <div>
+                <span>我是footer</span>
+                <slot>
+                    <span>我是默认footer</span>
+                <slot>
+            </div>
+        </div>
+    </script>
     <script>
         //根元素只能有一个 全局组件
        /*  Vue.component('demo',{
@@ -31,12 +49,12 @@
             //局部组件
             components:{
                 demo:{
-                    template:'<div><h1>{{title}}</h1><p>{{content}}</p></div>',
+                    template:'#temp',
                     props:['title','content']
                 }
             }
         });
-        var vm = new Vue({
+        var vm2 = new Vue({
             el: "#app2",
             data: {
                
