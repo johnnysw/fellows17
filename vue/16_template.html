@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
+
 <body>
     <div id="app">
-        <div v-if="msg == 1">111111</div>
-        <div v-else-if="msg == 2">22222</div>
-        <div v-else-if ="msg == 3">33333333</div>
-        <div v-show="msg ==3">444444444</div>
+        <!-- <h2 v-for="val in arr">{{val}}</h2> -->
+        <!-- template不是有效标签  -->
+        <template v-show="msg == 1" >
+            <h2>1111</h2>
+            <p>1111</p>
+        </template>
+
+        
+       
+        
+
+
+
+
+       
+      
+
+
     </div>
-
-
-
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
-            el:'#app',
-            data:{
-                msg:1
+            el: "#app",
+            data: {
+                arr:['a','b','c'],
+                msg:3
             }
         });
-    
-    
-    
-    
     </script>
-    
+
+
+
+
 </body>
+
 </html>

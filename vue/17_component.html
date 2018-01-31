@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="app">
+        <demo title="我是title1" content="我是内容1"></demo>
+        <demo title="我是title2" content="我是内容2"></demo>
+    </div>
+    <div id="app2">
+      
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        //根元素只能有一个 全局组件
+       /*  Vue.component('demo',{
+            template:'<div><h1>aaaaaa</h1><p>111111</p></div>'
+        }); */
+        var vm = new Vue({
+            el: "#app",
+            data: {
+               
+            },
+            //局部组件
+            components:{
+                demo:{
+                    template:'<div><h1>{{title}}</h1><p>{{content}}</p></div>',
+                    props:['title','content']
+                }
+            }
+        });
+        var vm = new Vue({
+            el: "#app2",
+            data: {
+               
+            }
+        });
+
+
+       
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
