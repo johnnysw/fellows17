@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-bg="'red'">fghjhgfhjkjg</div>
+        <!-- <p v-bg="'green'">ppppppp</p> -->
+        <div :id="'aaa'">11111111</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+       /*  Vue.directive('bg',function(el,binding,vnode){
+            el.style.backgroundColor = binding.value;
+        }); */
+        Vue.directive('bg',{
+            bind:function(el,binding,vnode){
+                console.log('bind');
+                el.style.backgroundColor = binding.value;
+            },
+            inserted:function(el,binding,vnode){
+                
+                console.log('inserted');
+            },
+            update:function(){
+                console.log('update');
+            }
+        })
+        var vm = new Vue({
+            el:"#app"
+        });
+            
+        
+    </script>
+
+</body>
+
+</html>
