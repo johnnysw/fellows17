@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+        <span v-text="msg"></span>
+        <span v-html="msg"></span>
+
+        <ul>
+            <li v-for="val in arr" :id="'item'+val">{{val}}</li>
+        </ul>
+
+        <div @click="fn()">1111</div>
+        <input type="text" @keyup.13 ="fn()">
+        <p v-if="isShow == 1">1111</p>
+        <p v-else>222</p>
+
+        <p v-show ="isShow == 1">333</p> -->
+        <!-- template不能使用v-show -->
+        <!-- <template v-for="val in arr">
+            <h2>{{val}}</h2>
+            <p>ppppp</p>
+        </template> -->
+
+        <ul>
+            <li v-for="val in arr" :id="'item'+val">{{val}}</li>
+        </ul>
+
+        <!-- 
+            arr[1] = '666' 不好使
+            Vue.set(vm.arr,1,666);
+            vm.arr.splice(3,1,888);
+            vm.arr.length = 2 不好使
+            vm.arr.splice(2);
+
+         -->
+            
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'hello world',
+                arr:[1,2,3,4],
+                isShow:4
+            },
+            methods:{
+                fn(){
+                    console.log('enter');
+                }
+            }
+        });
+    
+    </script>
+
+    
+</body>
+</html>
