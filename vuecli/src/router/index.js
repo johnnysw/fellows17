@@ -25,7 +25,8 @@ export default new Router({
           component: subTest1
         },
         {
-          path: '/subTest2/',
+          path: '/subTest2/:id/:name',
+          name: 'subTest2',
           component: subTest2
         }
        
