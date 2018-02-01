@@ -1,6 +1,9 @@
 <template>
   <div class="test1">
       <h2>我是测试页面1</h2>
+      <router-link to="/subTest1/">subtest1</router-link>
+      <router-link to="/subTest2/">subtest2</router-link>
+      <router-view></router-view>
   </div>
 </template>
 
