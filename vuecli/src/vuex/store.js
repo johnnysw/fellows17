@@ -8,7 +8,14 @@ const state = {
     x:10
 }
 
+const mutations = {
+    add(state){
+        state.num++;
+    }
+}
+
 
 export default new Vuex.Store({
-    state
+    state,
+    mutations
 });
