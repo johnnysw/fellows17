@@ -5,8 +5,8 @@ import Test1 from '@/components/Test1'
 import subTest1 from '@/components/subTest1'
 import subTest2 from '@/components/subTest2'
 import error from '@/components/Error'
-
-
+import Home from '@/components/Home'
+import Count from '@/components/Count'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +21,15 @@ export default new Router({
         next();
       }
     },
+    {
+      path:'/homecom',
+      component:Home
+    },
+    {
+      path:'/count',
+      component:Count
+    },
+
     {
       path: '/test/',
       name: 'Test1',
@@ -50,9 +59,11 @@ export default new Router({
           path: '/*',
           component: error
         }
-
+       
        
       ]
     }
+    
+    
   ]
 })
