@@ -4,12 +4,14 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    bgColor:'red'
+    bgColor:'red',
+    title:'默认值'
 }
 
 const mutations = {
-    change(state,bgColor){
+    change(state,{bgColor,title}){
         state.bgColor = bgColor;
+        state.title = title;
     }
 }
 

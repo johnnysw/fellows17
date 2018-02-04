@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-
+global.API_INTERFACE = 'https://bird.ioliu.cn/v1/?url='
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

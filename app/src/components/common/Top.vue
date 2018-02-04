@@ -1,8 +1,10 @@
 <template>
     <div class="com-top" :style="{background:$store.state.bgColor}">
-        <span class="com-top-btn">首页</span>
+        <router-link to="/">
+            <span class="com-top-btn">首页</span>
+        </router-link>
         <h2>
-            Movie
+            {{$store.state.title}}
         </h2>
     </div>
 </template>
