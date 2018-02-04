@@ -1,7 +1,7 @@
 <template>
     <div class="movieList">
         <ul>
-            <li v-for="(obj,index) in movies" :key="index">
+            <li v-for="(obj,index) in movies" :key="index" @click="fn(obj.id)">
                 <div class="img-box">
                     <img :src="obj.img" alt="">
                 </div>
@@ -17,7 +17,7 @@
             <img src="@/assets/images/loading.gif" alt="">
         </div>
         <div class="end" v-show="isEnd">
-            已经到底了~~
+            已经到底了
         </div>
     </div>
 </template>
@@ -29,18 +29,19 @@
             return {
                 movies:[],
                 isLoad:true,
-                isEnd:false,
-                flag:true //没有请求
+                isEnd: false,
+                flag:true
             }
         },
         methods:{
             load(){
-                if(this.flag){//当前没有请求的时候才发送
-                    this.flag = false;//我正在发请求
+                if(this.flag){
+                    this.flag = false;
                     axios.get(API_INTERFACE+'http://m.maoyan.com/movie/list.json?type=hot&offset='+this.movies.length+'&limit=10').then((res)=>{
-                        if(res.data.data.movies.length < 10){
+                        if(res.data.data.movies<10){
                             this.isEnd = true;
                         }
+                        console.log(res.data.data.movies);
                         this.movies = [...this.movies,...res.data.data.movies];
                         this.isLoad = false;
                         this.flag = true;
@@ -48,6 +49,10 @@
                         console.log('请求失败');
                     });
                 }
+                
+            },
+            fn(id){
+                this.$router.push('/movieDetail/'+id);
             }
         },
         mounted:function(){
@@ -56,23 +61,20 @@
             //axios请求
             this.load();
 
-            window.onscroll = () => {
-                //滚动条滚动高度（页面上）
+            window.onscroll = ()=>{
                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                //可视区高度
                 var clientHeight = document.documentElement.clientHeight;
-                //整个页面的高度
                 var scrollHeight = document.documentElement.scrollHeight;
+                // console(scrollTop,clientHeight ,scrollHeight);
                 if(scrollTop + clientHeight == scrollHeight){
-                    //isEnd ==  true 数据加完完  判断到达底部 
-                    if(!this.isEnd){//数据没有加载完 再发请求 loading show
-                        this.load();
+                    if(!this.isEnd){
                         this.isLoad = true;
-                    } 
+                        this.load();
+                    }
+                    
                 }
-          
-          }
-            
+            }
+
         }
     }
 </script>
