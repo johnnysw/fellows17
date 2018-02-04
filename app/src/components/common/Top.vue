@@ -1,5 +1,5 @@
 <template>
-    <div class="com-top">
+    <div class="com-top" :style="{background:$store.state.bgColor}">
         <span class="com-top-btn">首页</span>
         <h2>
             Movie
