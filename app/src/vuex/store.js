@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 const state = {
     bgColor:'red',
-    title:'默认值'
+    title:'默认值',
+    photoData:[]
 }
 
 const mutations = {
