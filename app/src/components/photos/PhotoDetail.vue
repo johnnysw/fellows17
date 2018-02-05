@@ -1,5 +1,6 @@
 <template>
-    <v-touch class="photo" @tap="fn()" @swipeleft="next" @swiperight="prev" :style="{background:bg}">
+    <v-touch class="photo" @swipeleft="next" @swiperight="prev" :style="{background:bg}">
+        <router-link class="link" to="/photoList"></router-link>
     </v-touch>
 </template>
 
@@ -25,17 +26,20 @@
                 if(this.idx == this.$store.state.photoData.length){
                     this.idx = 0;
                 }
+                this.$router.push('/photoDetail/'+this.idx);
             },
             prev(){
                 this.idx--;
                 if(this.idx == -1){
                     this.idx = this.$store.state.photoData.length-1;
                 }
-            },
+                this.$router.push('/photoDetail/'+this.idx);
+            }
+            /* ,
             fn(){
                 this.$router.push('/photoList');
                 event.preventDefault();
-            }
+            } */
         },
         computed:{
             bg:function(){
@@ -55,5 +59,9 @@
         right: 0;
         top:1rem;
         bottom: 1rem;
+    }
+    .link{
+        display: block;
+        height:100%;
     }
 </style>
