@@ -1,0 +1,39 @@
+{
+  "musicData": [{
+    "title": "我要你",
+    "author": "老狼",
+    "src": "http://up.mcyt.net/md5/53/OTkwNzUxMQ_Qq4329912.mp3",
+    "musicImgSrc": "http://omratag7g.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.jpg",
+    "lrc": "lrc/我要你.lrc"
+  }, {
+    "title": "成都",
+    "author": "赵雷",
+    "src": "http://sc1.111ttt.com/2016/1/12/04/205041718593.mp3",
+    "musicImgSrc": "http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
+    "lrc": "lrc/成都-赵雷.lrc"
+  }, {
+    "title": "就是爱你",
+    "author": "陶喆",
+    "src": "http://up.mcyt.net/md5/53/MTAzMTM1_Qq4329912.mp3",
+    "musicImgSrc": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1407964657,2382644691&fm=58",
+    "lrc": "lrc/就是爱你.lrc"
+  }, {
+    "title": "假如爱有天意",
+    "author": "李健",
+    "src": "http://sc1.111ttt.com/2015/1/03/21/96212158145.mp3",
+    "musicImgSrc": "http://omratag7g.bkt.clouddn.com/%E6%9D%8E%E5%81%A5.jpg",
+    "lrc": "lrc/假如爱有天意.lrc"
+  }, {
+    "title": "十年",
+    "author": "陈奕迅",
+    "src": "http://up.mcyt.net/md5/53/ODA0MDM=_Qq4329912.mp3",
+    "musicImgSrc": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3825361386,3954933951&fm=58",
+    "lrc": "lrc/十年.lrc"
+  }, {
+    "title": "刚好遇见你",
+    "author": "李玉刚",
+    "src": "http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3",
+    "musicImgSrc": "http://p4.music.126.net/lDyytkTaPYVTb1Vpide6AA==/18591642115187138.jpg",
+    "lrc": "lrc/刚好遇见你-李玉刚.lrc"
+  }]
+}
