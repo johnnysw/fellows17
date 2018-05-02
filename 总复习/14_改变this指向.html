@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function fn(x,y){
+        console.log(this,x,y);
+    }
+    fn(5,4);
+    obj = {
+        name:'zs'
+    };
+//    fn.call(obj,6,7);
+    fn.apply(obj,[6,7]);
+    fn.bind(obj,6,7)();
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    js数据类型
+
+    2种
+    基本数据类型 number string boolean undefined null
+    引用数据类型 object array
+
+
+
+<!--
+    返回->  undefined定义没赋值
+    <script>
+        var obj ={
+            name:'zs'
+        }
+        console.log(obj.age);
+        var arr = [1,2,3];
+//        arr[4]
+        function aa(){
+            console.log('aaa');
+        }
+        console.log(aa());
+
+    </script>-->
+
+    <script>
+//        object -> object array
+      /*  var str = 'aaa';
+        var num = 10;
+        var flag = true;
+        var a = undefined;
+        var b = null;
+        console.log(typeof str);  //  "string"
+        console.log(typeof num);  //  "number"
+        console.log(typeof flag);//"boolean"
+        console.log(typeof a);//"undefined"
+        console.log(typeof b);//"object"
+        var obj = {
+            name:'zs'
+        }
+        var arr = [1,2];
+        var fn = function(){
+            console.log("haha");
+        }
+        console.log(typeof obj);  //  "object"
+        console.log(typeof arr);  //  "object"
+        console.log(typeof fn);  //"function"
+
+        console.log(arr instanceof Array);
+        //instanceof arr是否是Array的实例
+        console.log(arr.constructor == Array);
+        //constructor 返回构造函数*/
+
+
+        var a = 'abc';
+        var b = a;
+
+        b = 'aa';
+        console.log(a);
+
+        var obj1 = {
+            name:'zs'
+        };
+        var obj2 = obj1;
+        obj2.name = 'lisi';
+        console.log(obj1.name);
+
+        function clone(obj){ //深克隆
+            var newObj = {};
+            for(key in obj){  // newObj.father =  obj.father
+                if(typeof obj[key] == 'object'){
+                    newObj[key] = clone(obj[key]);
+                }
+                newObj[key] = obj[key];
+            }
+            return newObj;
+        }
+
+        //克隆
+        var str = JSON.stringify(person1);
+        var person2 = JSON.parse(str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

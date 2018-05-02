@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--
+        闭包是指外部函数里声明内部函数，内部函数引用外部函数里的局部变量，
+        这样当外部函数调用完毕以后，局部变量不被释放，可以一直使用。
+        闭包缺点， 内存溢出
+    -->
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        for(var i=0; i<aLi.length; i++){ //4
+            (function(idx){
+                aLi[idx].onclick = function(){
+                    console.log(aLi[idx].innerHTML);
+                }
+            })(i);
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

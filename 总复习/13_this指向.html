@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //window
+   /* setInterval(function(){
+       console.log(this);
+    },1000);*/
+    //window.aa   ==>window
+    /*function aa(){
+        console.log(this);
+    }
+    aa();*/
+
+    //对象中   this指向当前引用的对象
+    obj = {
+        name:'zs',
+        age:20,
+        eat:function(){
+            console.log(this.name)
+        }
+    }
+    //构造函数中 this指向实例化对象
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+    var person1 = new Person('zs',10);
+    //oDiv
+   /* oDiv.onclick = function(){
+        console.log(this);
+        //
+    };*/
+
+    //父作用域 找this 箭头函数中没有自己的this
+//    this
+    obj5 = {
+        name:'lisi',
+        age:10,
+        eat:function(){
+//            this
+            setTimeout(() => {
+                console.log(this);
+            },1000);
+        }
+    }
+
+    obj5.eat();
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

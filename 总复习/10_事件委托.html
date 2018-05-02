@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #ul1{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="click" id="btn"/>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+</ul>
+
+
+<script>
+    /*事件委托  解决后生成元素的事件绑定问题
+    *
+    *
+    * */
+    var aLi = document.getElementsByTagName('li');
+    var oBtn = document.getElementById('btn');
+    var oUl = document.getElementById('ul1');
+   /* for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        }
+    }*/
+    oUl.onclick = function(e){
+        e = e || window.event;
+        var target = e.target || e.srcElement;
+
+        if(target.tagName == "LI" ){
+            console.log(target.innerHTML);
+        }
+
+       /* console.log(target,this); //target 事件源  点击的元素
+        //this   谁的事件this就是谁
+        console.log(e.currentTarget);// currentTarget == this*/
+    }
+    oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl.appendChild(oLi);
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

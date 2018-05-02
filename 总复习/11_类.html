@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /*所有构造函数下prototype 是一个指针，指向构造函数的原型对象。
+     原型对象下的所有方法属性 都会被实例化对象所共享。*/
+
+    /*function Person(name,age){
+        this.name = name;
+        this.age = age;
+        this.eat = function(){
+            console.log(this.name+" is eating");
+        }
+    }
+
+    Person.prototype.school = 'weichuang';
+    Person.prototype.hobby = ['sing','eat','sleep'];
+
+    var person1 = new Person('zs',10);
+    var person2 = new Person('lisi',10);
+
+//    person1.hobby = ['coding'];
+    person1.hobby.push('coding');
+    console.log(person1.hobby);
+    console.log(person2.hobby);
+    person1.eat();*/
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.eat = function(){
+        console.log(this.name +" is eating....");
+    }
+    var person1 = new Person('zs',10);
+   /* var person1 = new Person('zs',10);
+    var person2 = new Person('lisi',10);
+
+    person1.eat();*/
+//    继承在构造函数中通过.call()继承属性
+    function Man(name,age){
+        Person.call(this,name,age);
+    }
+//    构造函数.prototype = new 父类的实例化对象 继承方法
+    Man.prototype = new Person();
+    Man.prototype.constructor = Man;
+
+    /*构造函数下prototype属性 指向原型对象，
+    原型对象都有一个constructor属性 指向构造函数*/
+
+    console.log(Man.prototype.constructor);
+
+   /* var man1 = new Man('wagwu',20);
+
+    console.log(man1.name);
+
+    man1.eat();*/
+
+  console.log( person1.__proto__);  //prototype
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

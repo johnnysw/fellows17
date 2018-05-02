@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #content{
+            background: #0000ff;
+            /*overflow: hidden;*/
+            /*height: 200px;*/
+        }
+        #div1,#div2{
+            float: left;
+            height: 200px;
+        }
+        #div1{
+            background: #ff0000;
+        }
+        #div2{
+            background: #00ff00;
+        }
+        .clear{
+            clear: both;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+
+        }
+    </style>
+</head>
+<body>
+    id
+    class
+    p
+    .a .b
+    .a>.b
+    .a+.b
+    a:hover
+    a::after
+    []
+
+    style 1000
+    id 100
+    class :hover 10
+    div 1
+
+    position
+        static 默认的
+        relative  相对定位 相对于自己初始位置 定位后空间不释放
+        absolute  绝对定位 相对最近已定位的祖先元素 定位后空间释放
+        fixed 固定 相对于浏览器  定位后空间释放
+        sticky
+
+    display: inline; block ;inline-block; table; table-cell; flex;
+
+    清除float
+    父元素overflow:hidden
+    父元素高
+    clear:both
+    clearfix
+    父元素也浮动。。。
+
+
+    <div id="content" class="clearfix">
+        <div id="div1">
+            111
+        </div>
+        <div id="div2">
+            222
+        </div>
+        <!--<div class="clear"></div>-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
