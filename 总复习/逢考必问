@@ -9,8 +9,7 @@ Js：js数据类型  事件相关(冒泡 捕获)、委托、兼容 闭包  类�
 Jq事件的绑定  jq的源代码
 
 
-
-Css3动画、弹性盒模型（元素布局居中）、新选择器  盒模型（标准、ie怪异盒模型）
+Css3动画、transition、弹性盒模型（元素布局居中）、 盒模型（标准、ie怪异盒模型） 常用的css3属性
 
 Html5 sessionStorage  和  localStorage cookie区别 常见的html5标签
 
@@ -20,12 +19,17 @@ Html5 sessionStorage  和  localStorage cookie区别 常见的html5标签
 
 Sea.Js和require.Js的异同点  amd和cmd的区别  defer async
 
-es6：哪些新特性 let var const区别 箭头函数 this指向 promise 解构  新增方法
+es6：哪些新特性 let var const区别 箭头函数  promise  解构  新增方法
 
 genrator  async-awaite
 
-vue
+vue  常用指令 双向数据绑定 生命周期  父子组件传值  vuex  vue-router原理
 
-webpack
+webpack 打包原理
+
+
+
+
+
 
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #parent{
+            display: flex;
+        }
+        #div1{
+            height: 300px;
+            background: #ff0000;
+            flex: 1;
+        }
+        #div2{
+            height: 300px;
+            background: #00ff00;
+            flex: 2;
+        }
+
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*transition: width 2s ease 2s;*/
+            animation: run 2s ease 2s 2 forwards;
+        }
+        @keyframes run {
+            0%{
+
+            }
+            50%{
+                width: 300px;
+            }
+            100%{
+                width: 1000px;
+            }
+        }
+        /*#div3:hover{*/
+            /*width: 800px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+ 属性： border-radius  box-shadow transition transform animation backgroun-size 弹性盒模型
+
+
+ 弹性盒模型
+ 父元素：
+     display:flex
+     flex-direction：row | row-reverse | column | column-reverse
+     横向从左到右排列 |横向相反 | 即纵向从上往下排列 |纵向相反
+     align-items:flex-start | flex-end | center | baseline | stretch
+     纵轴垂直对齐方式
+     justify-content：flex-start | flex-end | center | space-between | space-around
+     横轴水平对齐方式
+
+
+
+ 子元素：
+    flex:份数
+
+<div id="parent">
+    <div id="div1"></div>
+    <div id="div2"></div>
+</div>
+
+<div id="div3">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

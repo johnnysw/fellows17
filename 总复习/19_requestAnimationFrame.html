@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div5">
+
+    </div>
+    <button id="btn">click</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oDiv = document.getElementById('div5');
+        oBtn.onclick = function(){
+            requestAnimationFrame(run);
+        };
+        function run() {
+            oDiv.style.width = oDiv.offsetWidth + 10 + "px";
+            if (oDiv.offsetWidth <= 800) {
+                requestAnimationFrame(run);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

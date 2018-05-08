@@ -13,9 +13,9 @@
     obj = {
         name:'zs'
     };
-//    fn.call(obj,6,7);
+//    fn.call(obj,6,7); 参数不一样
     fn.apply(obj,[6,7]);
-    fn.bind(obj,6,7)();
+    fn.bind(obj,6,7)(); //手动调用 只是改变this 没有调用
 
 
 

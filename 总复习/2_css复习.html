@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #content{
+            background: #0000ff;
+            /*overflow: hidden;*/
+            /*height: 200px;*/
+        }
+        #div1,#div2{
+            float: left;
+            height: 200px;
+        }
+        #div1{
+            background: #ff0000;
+        }
+        #div2{
+            background: #00ff00;
+        }
+        .clear{
+            clear: both;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+
+        }
+    </style>
+</head>
+<body>
+css选择器：
+    1、id选择器   #id{}
+    2、类选择器  .class{}
+    3、标签选择器   div{}  h1{}
+    4、后代选择器   #div1 .aa{}
+    5、子代选择器  #div1 > .aa{}
+    6、多类选择器   .aa.bb{}
+    7、分组选择器  #div1,#div2{}
+    8、伪类选择器  #aa:hover{}
+    9、伪对象选择器 ::before{content:'';}  ::after{}
+    10、兄弟选择器  +  ~
+    11、属性选择器 []
+
+css权重值：
+    内联 1000
+    id 100
+    class :hover 属性选择器  10
+    标签 1
+
+定位的几种方式position：
+    static 默认的
+    relative  相对定位 相对于自己初始位置 定位后空间不释放
+    absolute  绝对定位 相对最近已定位的祖先元素 定位后空间释放
+    fixed 固定 相对于浏览器  定位后空间释放
+    sticky 粘性
+
+display:
+    none; inline; block ;inline-block; table; table-cell; flex;
+
+    清除float方式：
+    父元素overflow:hidden
+    父元素设置高
+    clear:both   margin-top会失效
+    clearfix
+
+
+    父元素也浮动。。。
+css盒模型:
+    W3C标准盒模型:  width=内容w
+    怪异盒模型（混杂模式）ie6一下浏览器不写doctype：width=内容w+ padding + border
+    转化： box-sizing: border-box;
+外边距合并
+    1.父元素overflow:hidden
+    2.父元素或子元素浮动
+    3.父元素或子元素定位
+    4.父元素加边框
+
+bfc 块级格式化上下文  有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。
+    BFC布局规则：
+        内部的Box会在垂直方向，一个接一个地放置。
+        Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+        每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+        BFC的区域不会与float box重叠。
+        BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+        计算BFC的高度时，浮动元素也参与计算
+
+    哪些元素会生成BFC?
+
+        根元素
+        float属性不为none
+        position为absolute或fixed
+        display为inline-block, table-cell, table-caption, flex, inline-flex
+        overflow不为visible
+
+        https://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html
+重排重绘：
+    1.重绘就是在一个元素的外观被改变，但没有改变布局（宽高）的情况下发生，如改变visibility、outline、背景色等等。
+    2.重排就是DOM的变化影响到了元素的几何属性（宽和高），浏览器会重新计算元素的几何属性,如：改变窗囗大小、改变文字大小、内容的改变、浏览器窗口变化，style属性的改变等等。
+
+
+<div id="content" class="clearfix">
+        <div id="div1">
+            111
+        </div>
+        <div id="div2">
+            222
+        </div>
+        <!--<div class="clear"></div>-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
