@@ -1,0 +1,47 @@
+跨域 
+浏览器同源策略
+
+域名 www.a.com  www.b.com
+协议 https  http
+端口 :8080
+主域 子域 www.qq.com   news.qq.com
+
+
+	跨域：同源策略的限制
+    理解跨域首先必须要了解同源策略。同源策略是浏览器上为安全性考虑实施的非常重要的安全策略。
+        何谓同源:
+            URL由协议、域名、端口和路径组成，如果两个URL的协议、域名和端口相同，则表示他们同源。
+        同源策略:
+            浏览器的同源策略，限制了来自不同源的"document"或脚本，对当前"document"读取或设置某些属性。        
+     从一个域上加载的脚本不允许访问另外一个域的文档属性。
+
+
+    我知道有五种方式：
+    第一种： jsonp（json+padding）：实现原理是利用script标签的src属性可以跨域加载别的域中的文件实现的
+    	假设有一个a.com和b.com，现在a.com想访问b.com，在a.com中的一个网页中加入下面的代码：
+    	<script>
+    		function aaa(data){
+    			//对data进行相应的操作
+    		}
+
+    	</script>
+    	<script src="http://www.b.com/test.php?name=lisi&callback=aaa"></script>
+
+    	在b.com中的test.php中可以接收传递过来的参加name还有callback，然后执行：
+    	b.com中执行echo 'callback(要回传给a.com的数据)'
+
+    	JSONP的缺点则是：它只支持GET请求而不支持POST等其它类型的HTTP请求；它只支持跨域HTTP请求这种情况，不能解决不同域的两个页面之间如何进行JavaScript调用的问题。
+    第二种： iframe  a域里嵌入b域的页面      b里面在嵌入a的页面 在a的这个页面中通过top的方式访问方法  实现跨域
+
+    第三种： 服务器代理：因为服务器端程序是不存在跨域问题
+
+    第四种：CORS   A上的页面获取B上的资源，浏览器会检查服务器B的HTTP头(HEAD请求)，如果Access-Control-Allow-Origin中有A，或者是通配符*，浏览器就会允许跨域。
+    配置方法：在服务端配置 header("Access-Control-Allow-Origin:http://www.a.com");
+
+
+    第五种：Html5 中的 postmessage发送请求   onmessage接受请求
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	aaa
+
+	<iframe id="frame1" src="http://www.b.com/index5.html" frameborder="0"></iframe>
+	
+	<script>
+		var oIframe = document.getElementById('frame1');
+
+		oIframe.onload = function(){
+			var win = oIframe.contentWindow;
+	
+		    win.postMessage({
+		    	name:'lisi'
+		    },'http://www.b.com/index5.html')
+		}
+
+		window.onmessage = function(e){
+			console.log(e.data);
+		}
+
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>

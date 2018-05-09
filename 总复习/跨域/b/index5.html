@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		var str ;
+		window.onmessage = function(e){
+			str = e.data;
+		}
+		window.parent.postMessage({
+			name:str
+		},'http://www.a.com/index5.html')
+
+
+
+
+	</script>
+
+	
+</body>
+</html>
