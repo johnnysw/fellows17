@@ -24,19 +24,18 @@ Sea.Js和require.Js的异同点  amd和cmd的区别  defer async
 
 es6：哪些新特性 let var const区别 箭头函数  promise  解构  新增方法
 
-genrator  async-awaite
+genrator  async awaite
 
-vue  常用指令 双向数据绑定  生命周期  父子组件传值
-vuex   vue-router原理  html5中history
+vue  常用指令 双向数据绑定  生命周期  父子组件传值  vuex   vue-router
 
 
+
+
+前端安全（资源枚举，XSS攻击，CSRF攻击，DOS攻击）
+vue-router原理
 webpack 打包原理
-挺过 不太了解  config
-
-
-
-
-前端安全
+vuex原理
+http协议相关的
 
 
 
