@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+
+        @media screen and (max-width: 768px){
+
+        }
+
+
+    </style>
+</head>
+<body>
+    实现响应式   媒体查询，弹性和模型，百分比，rem
+
+    px（） em（相对于父元素） rem（相对于html）
+
+    rem原理  => rem.js
+
+    移动端兼容问题 ：点透
+
+    tap click (300ms延迟 => 判断单机双击 )
+
+    原因:zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，
+    并且tap事件是冒泡到document上触发的！！！而在冒泡到document之前，用户手的接触屏幕(touchstart)
+    和离开屏幕(touchend)是会触发click事件的,因为click事件有延迟触发(这就是为什么移动端不用
+    click而用tap的原因)(大概是300ms,为了实现safari的双击事件的设计)，所以在执行完tap事件之后，
+    弹出来的选择组件马上就隐藏了，此时click事件还在延迟的300ms之中，当300ms到来的时候，
+    click到的其实不是完成而是隐藏之后的下方的元素，如果正下方的元素绑定的有click事件此时便会触发，
+
+    1\ouchstart->touchend->click。亦即click的触发是有延迟的，这个时间大概在300ms左右。
+    .on('touchstart',function(){
+    e.preventDefault();
+    })
+    2\引入fastclick.js，因为fastclick源码不依赖其他库所以你可以在原生的js前直接加上
+    3\用touchend代替tap事件并阻止掉touchend的默认行为preventDefault()
+    4\延迟一定的时间(300ms+)来处理事件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
